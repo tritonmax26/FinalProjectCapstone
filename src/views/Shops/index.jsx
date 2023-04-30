@@ -4,18 +4,18 @@ import { Link } from 'react-router-dom'
 import http from '../../lib/http'
 import { Container, Card} from 'react-bootstrap';
 
-const Products = () => {
+const Shops = () => {
 
-  const [products, setProducts] = useState([])
+  const [shops, setShops] = useState([])
 
-  async function getProducts(){
-      const res = await http.get ("/products")
-      setProducts(res.data)
+  async function getShops(){
+      const res = await http.get ("/shops")
+      setShops(res.data)
       // console.log(res.data)
   }
 
   useEffect (()=>{        
-    getProducts();
+    getShops();
     return
 }, [])
 
@@ -23,18 +23,18 @@ const Products = () => {
 
   return (
     <div>
-      {products.map((product,index) => {      
+      {shops.map((shop,index) => {      
           return(
                 <div key={index}>
                   <Card style={{ width: '18rem' }}>
                     <Card.Body>
-                      <Card.Title>Branch: {product.branch}</Card.Title>
+                      <Card.Title>Branch: {shop.branch}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                      <Link to={`/${product.id}`}> Name: {product.name}</Link>                        
+                      <Link to={`/${shop.id}`}> Name: {shop.name}</Link>                        
                       </Card.Subtitle>
-                      <Card.Subtitle className="mb-2 text-muted">Price: {product.price}</Card.Subtitle>
+                      <Card.Subtitle className="mb-2 text-muted">Data:</Card.Subtitle>
                       <Card.Text>
-                        <Link to={`/${product.id}`}> ID: {product.id}</Link>
+                        <Link to={`/${shop.id}`}> ID: {shop.id}</Link>
                       </Card.Text>
                       {/* <Card.Link href="#">order</Card.Link>
                       <Card.Link href="#">cancel</Card.Link> */}
@@ -47,4 +47,4 @@ const Products = () => {
   )
 }
 
-export default Products
+export default Shops

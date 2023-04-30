@@ -6,29 +6,27 @@ import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 
 
-const Product = () => {
+const Shop = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [product, setProduct] = useState({});
+  const [shop, setShop] = useState({});
   const [onEdit, setOnEdit] = useState(false);
   const [name,setName] = useState('');
-  const [description,setDescription] = useState('');
-  const [price,setPrice] = useState('');
+  const [service,setService] = useState('');
   const [branch,setBranch] = useState('');
 
-async function getProduct(){
-      const res = await http.get (`/products/${id}`)
-      setProduct(res.data)
+async function getShop(){
+      const res = await http.get (`/shops/${id}`)
+      setShop(res.data)
       console.log(res)
 }
 
-async function updateProduct(e) {
+async function updateShop(e) {
     e.preventDefault()
-     const res = await http.put(`/products/${id}`, {
-        name: name ? name : product.name,
-        description: description ? description : product.description,
-        price: price ? price : product.price,
-        branch: branch ? branch : product.branch
+     const res = await http.put(`/shops/${id}`, {
+        name: name ? name : shop.name,
+        description: description ? description : shop.service,
+        branch: branch ? branch : shop.branch
       },
       {
           headers : {
@@ -36,13 +34,13 @@ async function updateProduct(e) {
           }
       }
       ) 
-  setProduct(res.data)
+  setShop(res.data)
   setOnEdit(false)
   } 
 
   async function deleteItem(e) {
 
-    await http.delete(`/products/${id}`,
+    await http.delete(`/shops/${id}`,
     {
         headers : {
             "Authorization": `Bearer ${localStorage.getItem("token")}`
@@ -54,7 +52,7 @@ async function updateProduct(e) {
 
 
   useEffect (()=>{        
-    getProduct();
+    getShop();
     return
 }, [])
 
@@ -74,13 +72,12 @@ async function updateProduct(e) {
         onEdit &&
         (
           <div>
-            <form onSubmit={updateProduct}>
+            <form onSubmit={updateShop}>
               <h1>Update Post</h1>
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
-            <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
-            <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
+            <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-            <input type="submit" value="Update Post" />              
+            <input type="submit" value="Update Shop" />              
             </form>
           </div>
 
@@ -89,15 +86,15 @@ async function updateProduct(e) {
 
 
       
-      Products2
-      <h1>{product.name}</h1>
+      Shop Names
+      <h1>{shop.name}</h1>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
-          <Card.Title>Branch: {product.branch}</Card.Title>
+          <Card.Title>Branch: {shop.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
-            Name: {product.name}                   
+            Name: {shop.name}                   
           </Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Price: {product.price}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">Data: </Card.Subtitle>
           <Card.Text>
              Trial for verification
           </Card.Text>
@@ -111,4 +108,4 @@ async function updateProduct(e) {
   )
 }
 
-export default Product
+export default Shop

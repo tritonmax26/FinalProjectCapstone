@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react'
 import http from '../lib/http'
 import { useNavigate} from 'react-router-dom'
-import Shops from ".././views/Shops"
+import Products from ".././views/Products"
 
 const Mainpage = () => {
     const [loggedIn, setLoggedin] = useState(localStorage.getItem("token"))
     const [name,setName] = useState('')
-    const [service,setService] = useState('')
+    const [description,setDescription] = useState('')
+    const [price,setPrice] = useState('')
     const [branch,setBranch] = useState('')
     const navigate = useNavigate()
 
-    async function createShop(e) {
+    async function createProduct(e) {
         e.preventDefault()
-        if (!name || !service || !branch) {
+        if (!name || !description || !price || !branch) {
             alert ("Please Fill all tabs")
             return
         }
 
-        const res = await http.post("/shops", {
+        const res = await http.post("/products", {
             name: name,
-            service: service,
+            description: description,
+            price: price,
             branch: branch
         },
         {
@@ -54,17 +56,17 @@ const Mainpage = () => {
         </button>
 
         {loggedIn && (
-            <form onSubmit={createShop}>
-                <input type="text" value={name} placeholder='shop' onChange={(e)=> setName(e.target.value)}/>
+            <form onSubmit={createProduct}>
+                <input type="text" value={name} placeholder='product' onChange={(e)=> setName(e.target.value)}/>
+                <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
+                <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
                 <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-                <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
                 <input type="submit" value="Submit" />
             </form>
         )}
 
         <div>
-            
-            <Shops />
+            <Products />
 
         </div>
 
