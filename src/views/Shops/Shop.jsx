@@ -4,6 +4,7 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import Productspage from '../../components/Productspage';
 
 
 const Shop = () => {
@@ -14,6 +15,7 @@ const Shop = () => {
   const [name,setName] = useState('');
   const [service,setService] = useState('');
   const [branch,setBranch] = useState('');
+  const [about,setAbout] = useState('');
 
 async function getShop(){
       const res = await http.get (`/shops/${id}`)
@@ -26,7 +28,8 @@ async function updateShop(e) {
      const res = await http.put(`/shops/${id}`, {
         name: name ? name : shop.name,
         description: description ? description : shop.service,
-        branch: branch ? branch : shop.branch
+        branch: branch ? branch : shop.branch,
+        about: about ? about: shop.about
       },
       {
           headers : {
@@ -77,6 +80,7 @@ async function updateShop(e) {
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
             <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
+            <input type="text" value={about} placeholder='about' onChange={(e)=> setAbout(e.target.value)}/>
             <input type="submit" value="Update Shop" />              
             </form>
           </div>
@@ -96,10 +100,12 @@ async function updateShop(e) {
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">Data: </Card.Subtitle>
           <Card.Text>
-             Trial for verification
+             About: {shop.about}
           </Card.Text>
-          <Card.Link href="#">order</Card.Link>
-          <Card.Link href="#">cancel</Card.Link>
+          {/* <button onClick={Productspage}>
+            Check Product
+          </button> */}
+          <Link to= "/shop/products">Check Products </Link>          
         </Card.Body>
       </Card>
 

@@ -8,11 +8,12 @@ const Mainpage = () => {
     const [name,setName] = useState('')
     const [service,setService] = useState('')
     const [branch,setBranch] = useState('')
+    const [about,setAbout] = useState('')
     const navigate = useNavigate()
 
     async function createShop(e) {
         e.preventDefault()
-        if (!name || !service || !branch) {
+        if (!name || !service || !branch || !about) {
             alert ("Please Fill all tabs")
             return
         }
@@ -20,7 +21,8 @@ const Mainpage = () => {
         const res = await http.post("/shops", {
             name: name,
             service: service,
-            branch: branch
+            branch: branch,
+            about: about
         },
         {
             headers : {
@@ -58,6 +60,7 @@ const Mainpage = () => {
                 <input type="text" value={name} placeholder='shop' onChange={(e)=> setName(e.target.value)}/>
                 <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
                 <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
+                <input type="text" value={about} placeholder='about' onChange={(e)=> setAbout(e.target.value)}/>
                 <input type="submit" value="Submit" />
             </form>
         )}

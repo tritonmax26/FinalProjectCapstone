@@ -1,5 +1,4 @@
 import Loginpage from '../components/Loginpage'
-import Productspage from './Productspage'
 
 const Home = () => {
   return (
@@ -7,8 +6,7 @@ const Home = () => {
         <h1>
             Trial Run
         </h1>
-        <Loginpage />
-        <Productspage />
+        <Loginpage />        
     </div>
   )
 }

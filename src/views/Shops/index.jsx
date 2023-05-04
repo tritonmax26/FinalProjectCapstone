@@ -30,11 +30,11 @@ const Shops = () => {
                     <Card.Body>
                       <Card.Title>Branch: {shop.branch}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted">
-                      <Link to={`/${shop.id}`}> Name: {shop.name}</Link>                        
+                      <Link to={`/shops/${shop.id}`}> Name: {shop.name}</Link>                        
                       </Card.Subtitle>
                       <Card.Subtitle className="mb-2 text-muted">Data:</Card.Subtitle>
                       <Card.Text>
-                        <Link to={`/${shop.id}`}> ID: {shop.id}</Link>
+                        <Link to={`/shops/${shop.id}`}> ID: {shop.id}</Link>
                       </Card.Text>
                       {/* <Card.Link href="#">order</Card.Link>
                       <Card.Link href="#">cancel</Card.Link> */}

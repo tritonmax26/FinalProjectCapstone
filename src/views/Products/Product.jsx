@@ -62,7 +62,7 @@ async function updateProduct(e) {
 
     <div>
       <div>
-      <Link to="/mainpage">Back</Link>
+      <Link to="/shop/products">Back</Link>
       <button onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>
@@ -89,7 +89,7 @@ async function updateProduct(e) {
 
 
       
-      Products2
+      Products2 Link
       <h1>{product.name}</h1>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
@@ -99,7 +99,7 @@ async function updateProduct(e) {
           </Card.Subtitle>
           <Card.Subtitle className="mb-2 text-muted">Price: {product.price}</Card.Subtitle>
           <Card.Text>
-             Trial for verification
+             Trial for for product
           </Card.Text>
           <Card.Link href="#">order</Card.Link>
           <Card.Link href="#">cancel</Card.Link>
