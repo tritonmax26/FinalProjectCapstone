@@ -22,3 +22,21 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.fontwhite{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.buttonhover{
+text-decoration: none;
+}
+
+.buttonhover:hover{
+  background-image: linear-gradient(to right, #F97B22, #FEE8B0); 
+  padding: 0.5rem;
+}
+
+.fontblack{
+  color: black;
+}

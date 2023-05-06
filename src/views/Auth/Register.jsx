@@ -13,7 +13,7 @@ const Register = () => {
     async function register(e){
         e.preventDefault();
         if (!name || !email || !password || !passwordConfrimation || !(password === passwordConfrimation)){
-            alert("incorect data");
+            alert("Incorect Data, please make sure you input the right data");
             return
         }
         // console.log("correct data");
@@ -35,17 +35,23 @@ const Register = () => {
 
 
   return (
-    <div>Register
+    <div><h4 className='text-center'>Application Details</h4>
         <form onSubmit={register}>
-            <h3>Name</h3>
-            <input type="text" value={name} onChange={(e)=> setName(e.target.value)} placeholder='name' /> 
-            <h3>Email</h3>
-            <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
-            <h3>Password</h3>
-            <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
-            <h3>Confirm Password</h3> 
-            <input type="password" value={passwordConfrimation} onChange={(e)=> setPassworConfirmation(e.target.value)}placeholder='confirm password'/>
-            <input type="submit" value="Register" />
+            <h6 className='mt-4'>Name</h6>
+            <input type="text" className='mb-4' value={name} onChange={(e)=> setName(e.target.value)} placeholder='name' /> 
+            <h6>Email</h6>
+            <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
+            <h6>Address</h6>
+            <input type="text" className='mb-4' placeholder='address'/> 
+            <h6>Zip Code</h6>
+            <input type="text" className='mb-4' placeholder='zip code'/> 
+            <h6>Contact No.</h6>
+            <input type="tel" className='mb-4' placeholder='contact #'/> 
+            <h6>Password</h6>
+            <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
+            <h6>Confirm Password</h6> 
+            <input type="password" className='mb-4' value={passwordConfrimation} onChange={(e)=> setPassworConfirmation(e.target.value)}placeholder='confirm password'/>
+            <br></br><input type="submit" class="btn btn-primary buttonhover" value="Register!" />
         </form> 
     </div>
   )

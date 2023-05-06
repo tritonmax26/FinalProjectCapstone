@@ -32,14 +32,14 @@ const Login = () => {
 
 
   return (
-    <div>Login
+    <div>
         <form onSubmit={login}>
-            <h2>Log in</h2>
-            <h3>Email</h3>
-            <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
-            <h3>Password</h3>
-            <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
-            <input type="submit" value="Log In" />
+            <h2 className='text-center'>Log In Portal</h2>
+            <h5 className='mt-4'>Email</h5>
+            <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
+            <h5>Password</h5>
+            <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
+            <br></br><input type="submit" class="btn btn-primary buttonhover" value="Sign In!" />
         </form> 
 
 
