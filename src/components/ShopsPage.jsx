@@ -65,11 +65,7 @@ const Mainpage = () => {
             </form>
         )}
 
-        <div>
-            
-            <Shops />
-
-        </div>
+        <Shops />
 
     </div>
   )

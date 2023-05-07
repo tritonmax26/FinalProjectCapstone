@@ -1,17 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import http from '../../lib/http'
-import { Container, Card} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
+import ProductCard from '../../components/ProductCard'
+import ProductsPagination from '../../components/ProductsPagination'
 
 const Products = () => {
 
   const [products, setProducts] = useState([])
+  const [meta, setMeta] = useState({})
 
-  async function getProducts(){
-      const res = await http.get ("/products")
-      setProducts(res.data)
-      // console.log(res.data)
+  async function getProducts(page=1){
+      const url = `/products?page=${page}`
+      const res = await http.get(url)
+      setProducts(res.data.data)
+      setMeta(res.data.meta)  
+      console.log(res.data)
   }
 
   useEffect (()=>{        
@@ -23,26 +27,21 @@ const Products = () => {
 
   return (
     <div>
-      {products.map((product,index) => {      
-          return(
-                <div key={index}>
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Body>
-                      <Card.Title>Branch: {product.branch}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">
-                      <Link to={`/shop/products/${product.id}`}> Name: {product.name}</Link>                        
-                      </Card.Subtitle>
-                      <Card.Subtitle className="mb-2 text-muted">Price: {product.price}</Card.Subtitle>
-                      <Card.Text>
-                        <Link to={`/shop/products`}> ID: {product.id}</Link>
-                      </Card.Text>
-                      {/* <Card.Link href="#">order</Card.Link>
-                      <Card.Link href="#">cancel</Card.Link> */}
-                    </Card.Body>
-                  </Card>
-                </div>    
-              )
+      <div className='centerAll'>
+      <Container>      
+          {products.map((product,index) => {    
+              return(
+                <div className='productDivContainer'>
+                  <ProductCard key={index} id={product.id} name={product.name} description={product.description} price={product.price} branch={product.branch} image={product.image} />
+                </div>  
+            )
             })}
+              
+          {/* {
+              meta.links && <ProductsPagination links={meta.links} active={meta.current_page} getProducts={getProducts}/>
+            }        */}
+      </Container> 
+      </div>      
     </div>
   )
 }

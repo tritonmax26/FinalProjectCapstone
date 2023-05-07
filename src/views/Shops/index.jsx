@@ -1,48 +1,47 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Container } from 'react-bootstrap';
 import http from '../../lib/http'
-import { Container, Card} from 'react-bootstrap';
+import ShopCard from '../../components/ShopCard'
+import ShopsPagination from '../../components/ShopsPagination'
 
 const Shops = () => {
 
-  const [shops, setShops] = useState([])
+  const [shops, setShops] = useState([])  
+  const [meta, setMeta] = useState({})
 
-  async function getShops(){
-      const res = await http.get ("/shops")
-      setShops(res.data)
-      // console.log(res.data)
-  }
 
-  useEffect (()=>{        
-    getShops();
-    return
+async function getShops(page=1){
+  const url = `/shops?page=${page}`
+  const res = await http.get(url)      
+  setShops(res.data.data)
+  setMeta(res.data.meta)  
+}
+
+useEffect (()=>{        
+getShops();
+return
 }, [])
-
 
 
   return (
     <div>
-      {shops.map((shop,index) => {      
-          return(
-                <div key={index}>
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Body>
-                      <Card.Title>Branch: {shop.branch}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">
-                      <Link to={`/shops/${shop.id}`}> Name: {shop.name}</Link>                        
-                      </Card.Subtitle>
-                      <Card.Subtitle className="mb-2 text-muted">Data:</Card.Subtitle>
-                      <Card.Text>
-                        <Link to={`/shops/${shop.id}`}> ID: {shop.id}</Link>
-                      </Card.Text>
-                      {/* <Card.Link href="#">order</Card.Link>
-                      <Card.Link href="#">cancel</Card.Link> */}
-                    </Card.Body>
-                  </Card>
-                </div>    
-              )
-            })}
+      <div className='centerAll '>
+        <Container>
+          {shops.map((shop,index) => {      
+              return(
+
+                    <div className='shopDivContainer'>
+                      <ShopCard key={index} id={shop.id} name={shop.name} branch={shop.branch} service={shop.service} about={shop.about} image={shop.image} name2={shop.user.name}/>
+                    </div>
+
+                  )
+                })}
+          {
+            meta.links && <ShopsPagination links={meta.links} active={meta.current_page} getShops={getShops}/>
+          }
+      </Container>
+      </div>
     </div>
   )
 }

@@ -5,14 +5,20 @@ import Products from "./views/Products"
 import Product from "./views/Products/Product"
 import Register from "./views/Auth/Register"
 import Login from "./views/Auth/Login"
-import Mainpage from "./components/Mainpage"
+import ShopsPage from "./components/ShopsPage"
 import Shops from "./views/Shops"
 import Shop from "./views/Shops/Shop"
+import Search from "./views/Search"
+import Mainpage from "./views/Mainpage"
 
 const routes = [
   {
     path: "/",
     element: <Home />
+  },
+  {
+    path: "/:id",
+    element: <Mainpage />
   },
   {
     path: "/loginpage",
@@ -31,8 +37,8 @@ const routes = [
     element: <Login />
   },
   {
-    path: "/mainpage",
-    element: <Mainpage />
+    path: "/shopspage",
+    element: <ShopsPage />
   },
   {
     path: "/shops",
@@ -43,12 +49,20 @@ const routes = [
     element: <Shop />
   },
   {
+    path: "/products",
+    element: <Products />
+  },
+  {
     path: "/shop/products",
     element: <Products />
   },
   {
     path: "/shop/products/:id",
     element: <Product />
+  },
+  {
+    path: "/search",
+    element: <Search />
   },
 
 

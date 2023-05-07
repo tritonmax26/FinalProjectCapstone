@@ -41,12 +41,12 @@ const Register = () => {
             <input type="text" className='mb-4' value={name} onChange={(e)=> setName(e.target.value)} placeholder='name' /> 
             <h6>Email</h6>
             <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
-            <h6>Address</h6>
+            {/* <h6>Address</h6>
             <input type="text" className='mb-4' placeholder='address'/> 
             <h6>Zip Code</h6>
             <input type="text" className='mb-4' placeholder='zip code'/> 
             <h6>Contact No.</h6>
-            <input type="tel" className='mb-4' placeholder='contact #'/> 
+            <input type="tel" className='mb-4' placeholder='contact #'/>  */}
             <h6>Password</h6>
             <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
             <h6>Confirm Password</h6> 

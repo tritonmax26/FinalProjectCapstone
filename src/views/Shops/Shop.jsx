@@ -20,7 +20,7 @@ const Shop = () => {
 async function getShop(){
       const res = await http.get (`/shops/${id}`)
       setShop(res.data)
-      console.log(res)
+      console.log(res.data)
 }
 
 async function updateShop(e) {
@@ -50,7 +50,7 @@ async function updateShop(e) {
         }
     }
     )
-    navigate("/mainpage")
+    navigate("/")
   }
 
 
@@ -63,7 +63,7 @@ async function updateShop(e) {
 
     <div>
       <div>
-      <Link to="/mainpage">Back</Link>
+      <Link to="/">Back</Link>
       <button onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>
@@ -90,7 +90,7 @@ async function updateShop(e) {
 
 
       
-      Shop Names
+      Per Shop query
       <h1>{shop.name}</h1>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
@@ -105,7 +105,7 @@ async function updateShop(e) {
           {/* <button onClick={Productspage}>
             Check Product
           </button> */}
-          <Link to= "/shop/products">Check Products </Link>          
+          <Link to= "/products" >Check Products </Link>          
         </Card.Body>
       </Card>
 

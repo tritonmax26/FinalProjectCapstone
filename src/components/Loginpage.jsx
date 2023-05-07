@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom'
 
 
 
+
 const Loginpage = () => {
 
 
 
   return (
-      <div>
+    <div>
+        
     <Card style={{ width: '18rem' }}>
       <Card.Body>
         <Card.Title>Welcome to S.A.P. Stocks & Holdings Inc.</Card.Title>
