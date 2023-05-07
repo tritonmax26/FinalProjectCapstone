@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
 
-const ShopsPagination = ({links, active , getShops}) => {
+const ShopsPagination = ({links,active,getShops}) => {
   return (
     <>
     <Pagination>
@@ -17,6 +17,7 @@ const ShopsPagination = ({links, active , getShops}) => {
       })}
      
     </Pagination>    
+    
     </>
   )
 }

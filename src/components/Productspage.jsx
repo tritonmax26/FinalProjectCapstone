@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import http from '../lib/http'
 import { useNavigate} from 'react-router-dom'
-import Products from "../views/Products"
+// import Products from "../views/Products"
 import { Link } from 'react-router-dom'
 
 const Productspage = () => {

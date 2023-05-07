@@ -37,9 +37,9 @@ const Products = () => {
             )
             })}
               
-          {/* {
+          {
               meta.links && <ProductsPagination links={meta.links} active={meta.current_page} getProducts={getProducts}/>
-            }        */}
+            }       
       </Container> 
       </div>      
     </div>
