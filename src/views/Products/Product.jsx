@@ -49,7 +49,7 @@ async function updateProduct(e) {
         }
     }
     )
-    navigate("/mainpage")
+    navigate("/")
   }
 
 

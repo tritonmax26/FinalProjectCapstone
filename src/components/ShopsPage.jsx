@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import http from '../lib/http'
 import { useNavigate} from 'react-router-dom'
-import Shops from ".././views/Shops"
 
-const Mainpage = () => {
+const ShopsPage = () => {
     const [loggedIn, setLoggedin] = useState(localStorage.getItem("token"))
     const [name,setName] = useState('')
     const [service,setService] = useState('')
@@ -63,15 +62,13 @@ const Mainpage = () => {
                 <input type="text" value={about} placeholder='about' onChange={(e)=> setAbout(e.target.value)}/>
                 <input type="submit" value="Submit" />
             </form>
-        )}
-
-        <Shops />
+        )}        
 
     </div>
   )
 }
 
-export default Mainpage
+export default ShopsPage
 
 // name
 // description
