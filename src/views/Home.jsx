@@ -1,5 +1,5 @@
 import Loginpage from '../components/Loginpage'
-import NavbarMain from '../components/NavbarMain';
+
 
 const Home = () => {
   return (

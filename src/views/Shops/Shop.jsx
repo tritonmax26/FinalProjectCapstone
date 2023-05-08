@@ -4,8 +4,6 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import ShopCard from '../../components/ShopCard'
-import Productspage from '../../components/Productspage';
 
 
 const Shop = () => {
@@ -22,7 +20,7 @@ const Shop = () => {
 async function getShop(){
       const res = await http.get (`/shops/${id}`)
       setShop(res.data)
-      // console.log(res.data)
+      console.log(res.data.products)
 }
 
 async function updateShop(e) {

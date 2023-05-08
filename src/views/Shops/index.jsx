@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import http from '../../lib/http'
 import ShopCard from '../../components/ShopCard'
 import ShopsPagination from '../../components/ShopsPagination'
+import NavbarMain from '../../components/NavbarMain'
 
 const Shops = () => {
 
@@ -29,6 +30,7 @@ return
 
   return (
     <div>
+      <NavbarMain />
       <div className='centerAll '>
         <Container >
           {shops.map((shop,index) => {      

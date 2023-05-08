@@ -11,6 +11,7 @@ import Shops from "./views/Shops"
 import Shop from "./views/Shops/Shop"
 import Search from "./views/Search"
 import Mainpage from "./views/Mainpage"
+import ProductsPerShop from "./views/ProductsPerShop"
 
 
 const routes = [
@@ -27,10 +28,6 @@ const routes = [
     element: <Loginpage />
   },
   {
-    path: "/shop/products",
-    element: <Productspage />
-  }, 
-  {
     path: "/register",
     element: <Register />
   },
@@ -41,10 +38,6 @@ const routes = [
   {
     path: "/logout",
     element: <Logout />
-  },
-  {
-    path: "/shopspage",
-    element: <ShopsPage />
   },
   {
     path: "/shops",
@@ -59,9 +52,10 @@ const routes = [
     element: <Products />
   },
   {
-    path: "/shop/products",
-    element: <Products />
+    path: "/shop/products/:id",
+    element: <ProductsPerShop />
   },
+
   {
     path: "/shop/products/:id",
     element: <Product />
