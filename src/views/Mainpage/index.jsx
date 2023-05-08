@@ -9,7 +9,7 @@ const  Mainpage = () => {
 
   return (
     <div>
-        <NavbarMain/>
+        {/* <NavbarMain/> */}
         <Shops/>
     </div>
   )

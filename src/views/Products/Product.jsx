@@ -62,7 +62,7 @@ async function updateProduct(e) {
 
     <div>
       <div>
-      <Link to="/shop/products">Back</Link>
+      <Link to={`/shops/${id}`}>Back</Link>
       <button onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>

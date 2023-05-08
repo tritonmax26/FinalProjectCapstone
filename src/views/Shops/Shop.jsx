@@ -119,7 +119,7 @@ async function updateShop(e) {
           {/* <button onClick={Productspage}>
             Check Product
           </button> */}
-          <Link to= "/products" >Check Products </Link>          
+          <Link to= {`/shop/products/${id}`} >Check Products </Link>          
         </Card.Body>
       </Card>
 

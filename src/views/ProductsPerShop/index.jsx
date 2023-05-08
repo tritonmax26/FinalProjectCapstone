@@ -4,45 +4,55 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import ProductCard from '../../components/ProductCard';
 
 
 const index = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [shop, setShop] = useState({});
+  const [shops, setShops] = useState([]);
 
-async function getShop(){
+async function getShops(){
       const res = await http.get (`/shops/${id}`)
-      setShop(res.data.products)
+      setShops(res.data.products)
       console.log(res.data.products)
 }
   useEffect (()=>{        
-    getShop();
+    getShops();
     return
 }, [])
 
   return (
 
     <div>
-      Per shop per product query
-      <h1>{shop.name}</h1>
-      <Card style={{ width: '18rem' }} >
-        {/* <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" /> */}
-        <Card.Body>
-          <Card.Title>Branch: {shop.branch}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Name: {shop.name}                   
-          </Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Price: {shop.price}</Card.Subtitle>
-          <Card.Text>
-             Description: {shop.decription}
-          </Card.Text>
-          {/* <button onClick={Productspage}>
-            Check Product
-          </button> */}
-          <Link to= "/products" >Check Item </Link>          
-        </Card.Body>
-      </Card>      
+      Per products per shop query
+      {shops.map((shop,index) => {      
+       return(
+        <div>
+            <h1>{shop.name}</h1>
+            <div className='productDivContainer'>
+              <Card style={{ width: '18rem' }} >
+              <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
+              <Card.Body>
+              <Card.Title>Branch: {shop.branch}</Card.Title>
+              <Card.Subtitle className="mb-2 text-muted">
+              Name: {shop.name}                   
+              </Card.Subtitle>
+              <Card.Subtitle className="mb-2 text-muted">Price: {shop.price}</Card.Subtitle>
+              <Card.Text>
+                  Description: {shop.decription}
+              </Card.Text>
+                {/* <button onClick={Productspage}>
+                  Check Product
+                </button> */}
+                <Link to={`/products/${id}`}>Check Item </Link>          
+                </Card.Body>
+                </Card>                    
+            </div>  
+          </div>
+          )
+      })}     
+    
     </div>
   )
 }

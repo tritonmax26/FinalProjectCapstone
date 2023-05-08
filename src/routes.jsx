@@ -48,6 +48,10 @@ const routes = [
     element: <Shop />
   },
   {
+    path: "/shoppage",
+    element: <ShopsPage />
+  },
+  {
     path: "/products",
     element: <Products />
   },
@@ -55,9 +59,13 @@ const routes = [
     path: "/shop/products/:id",
     element: <ProductsPerShop />
   },
+  {
+    path: "/productspage",
+    element: <Productspage/>
+  },
 
   {
-    path: "/shop/products/:id",
+    path: "/products/:id",
     element: <Product />
   },
   {

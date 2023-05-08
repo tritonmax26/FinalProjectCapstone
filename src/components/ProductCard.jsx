@@ -22,7 +22,7 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
                     Price: {price}
                 </Card.Subtitle>
                 <Card.Text>
-                    <Link to={`/shop/products/`}> ID: {id}</Link>
+                    <Link to={`/shop/products/${id}`}> ID: {id}</Link>
                 </Card.Text>
                 {/* <Card.Link href="#">order</Card.Link>
                 <Card.Link href="#">cancel</Card.Link> */}

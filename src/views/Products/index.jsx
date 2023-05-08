@@ -30,7 +30,7 @@ const Products = () => {
     <div>
       <NavbarMain />
       <div className='centerAll'>
-      <Container>      
+      <Container key={index}>      
           {products.map((product,index) => {    
               return(
                 <div className='productDivContainer'>
