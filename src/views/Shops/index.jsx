@@ -16,12 +16,15 @@ async function getShops(page=1){
   const res = await http.get(url)      
   setShops(res.data.data)
   setMeta(res.data.meta)  
+  console.log(res.data.data)
+
 }
 
 useEffect (()=>{        
 getShops();
 return
 }, [])
+
 
 
   return (

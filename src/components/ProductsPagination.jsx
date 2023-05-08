@@ -7,7 +7,7 @@ const ProductsPagination = ({links,active,getProducts}) => {
     <>
     <Pagination>
       {links
-      .filter( (_,index) => index !== 0 && index !== 8) 
+      .filter( (_,index) => index !== 0 && index !== 14) 
 
       .map(( link ,index ) => {      
         return (

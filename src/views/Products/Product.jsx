@@ -92,6 +92,7 @@ async function updateProduct(e) {
       Products2 Link
       <h1>{product.name}</h1>
       <Card style={{ width: '18rem' }}>
+      <img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
         <Card.Body>
           <Card.Title>Branch: {product.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

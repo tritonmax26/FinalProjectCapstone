@@ -16,11 +16,12 @@ const Shop = () => {
   const [service,setService] = useState('');
   const [branch,setBranch] = useState('');
   const [about,setAbout] = useState('');
+  // const [shopImage,setShopImage] =  useState ();
 
 async function getShop(){
       const res = await http.get (`/shops/${id}`)
       setShop(res.data)
-      console.log(res.data)
+      // console.log(res.data)
 }
 
 async function updateShop(e) {
@@ -52,6 +53,19 @@ async function updateShop(e) {
     )
     navigate("/")
   }
+
+  // async function getImage () {
+  //   const res = await http.get(`/image/${shop.image}`)
+  //   console.log (res)
+  //   setShopImage(res.data)
+  // }
+  
+
+  // useEffect (()=>{        
+  //   getImage();
+  //   return
+  //   }, [shop])
+  
 
 
   useEffect (()=>{        
@@ -92,7 +106,8 @@ async function updateShop(e) {
       
       Per Shop query
       <h1>{shop.name}</h1>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} >
+        <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
         <Card.Body>
           <Card.Title>Branch: {shop.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

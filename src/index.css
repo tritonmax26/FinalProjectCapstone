@@ -7,11 +7,11 @@ body {
   min-height: 100vh;
 }
 
-.centerAll{
+/* .centerAll{
   justify-content: center;
   align-items: center;
   place-items: center;
-}
+} */
 
 .fontwhite{
   text-decoration: none;

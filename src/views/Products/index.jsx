@@ -15,7 +15,7 @@ const Products = () => {
       const res = await http.get(url)
       setProducts(res.data.data)
       setMeta(res.data.meta)  
-      console.log(res.data)
+      console.log(res.data.meta)
   }
 
   useEffect (()=>{        

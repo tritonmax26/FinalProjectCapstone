@@ -6,10 +6,9 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
   return (
        <div className='productDivContainer p-2 gap-1'>
            <Card style={{ width: '20rem' }} className='centerAll'>
+           <img src={`${import.meta.env.VITE_API}/image/${image}`} alt="" />
              <Card.Body className='productCard centerAll '>
-                    <div>
-                    {image}
-                    </div>
+                    
                 <Card.Title>Branch: {branch}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
                 <Link to={`/shop/products/${id}`}>
