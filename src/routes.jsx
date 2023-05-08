@@ -5,11 +5,13 @@ import Products from "./views/Products"
 import Product from "./views/Products/Product"
 import Register from "./views/Auth/Register"
 import Login from "./views/Auth/Login"
+import Logout from "./views/Auth/Logout"
 import ShopsPage from "./components/ShopsPage"
 import Shops from "./views/Shops"
 import Shop from "./views/Shops/Shop"
 import Search from "./views/Search"
 import Mainpage from "./views/Mainpage"
+
 
 const routes = [
   {
@@ -17,7 +19,7 @@ const routes = [
     element: <Home />
   },
   {
-    path: "/:id",
+    path: "/mainpage",
     element: <Mainpage />
   },
   {
@@ -35,6 +37,10 @@ const routes = [
   {
     path: "/login",
     element: <Login />
+  },
+  {
+    path: "/logout",
+    element: <Logout />
   },
   {
     path: "/shopspage",
@@ -64,6 +70,7 @@ const routes = [
     path: "/search",
     element: <Search />
   },
+
 
 
 

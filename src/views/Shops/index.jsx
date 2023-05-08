@@ -30,7 +30,7 @@ return
   return (
     <div>
       <div className='centerAll '>
-        <Container>
+        <Container >
           {shops.map((shop,index) => {      
               return(
 
@@ -41,7 +41,7 @@ return
                   )
                 })}
           {
-            meta.links && <ShopsPagination links={meta.links} active={meta.current_page} getShops={getShops}/>
+            meta.links && <ShopsPagination  links={meta.links} active={meta.current_page} getShops={getShops}/>
           }
       </Container>
       </div>

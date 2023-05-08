@@ -4,6 +4,7 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import ShopCard from '../../components/ShopCard'
 import Productspage from '../../components/Productspage';
 
 
@@ -28,7 +29,7 @@ async function updateShop(e) {
     e.preventDefault()
      const res = await http.put(`/shops/${id}`, {
         name: name ? name : shop.name,
-        description: description ? description : shop.service,
+        service: service ? service : shop.service,
         branch: branch ? branch : shop.branch,
         about: about ? about: shop.about
       },
@@ -77,7 +78,7 @@ async function updateShop(e) {
 
     <div>
       <div>
-      <Link to="/">Back</Link>
+      <Link to="/mainpage">Back</Link>
       <button onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>
@@ -90,7 +91,7 @@ async function updateShop(e) {
         (
           <div>
             <form onSubmit={updateShop}>
-              <h1>Update Post</h1>
+              <h1>Update Product</h1>
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
             <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>

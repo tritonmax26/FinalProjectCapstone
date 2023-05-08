@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const ShopCard = ({id, name, branch, service, about, name2 ,image}) => {
   return (
-    <div>
+    <div>      
         <div className='shopDivContainer p-2 gap-1'>
             <Card style={{ width: '20rem' }}>
-            <img src={`${import.meta.env.VITE_API}/image/${image}`} alt="" />
+                <img src={`${import.meta.env.VITE_API}/image/${image}`} alt="" />
                 <Card.Body className='productCard centerAll'>
                     <Card.Title>Branch: {branch}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">

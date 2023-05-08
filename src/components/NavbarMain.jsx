@@ -13,10 +13,10 @@ const NavbarMain = () => {
           <Nav className="me-auto">
           </Nav>
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
-            <Nav.Link as={Link} to="/search" >Search</Nav.Link>
-            <Nav.Link as={Link} to="/login" >Log In</Nav.Link>            
-            <Nav.Link as={Link} to="/register">Register</Nav.Link>        
+            <Nav.Link as={Link} to="/mainpage">Home</Nav.Link>
+            <Nav.Link as={Link} to="/shops" >Shops</Nav.Link>
+            <Nav.Link as={Link} to="/products" >Products</Nav.Link>            
+            <Nav.Link as={Link} to="/logout">Log Out</Nav.Link>        
           </Nav>      
         </Navbar.Collapse>
       </Container>

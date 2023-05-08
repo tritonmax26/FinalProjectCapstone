@@ -4,6 +4,7 @@ import http from '../../lib/http'
 import { Container } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard'
 import ProductsPagination from '../../components/ProductsPagination'
+import NavbarMain from '../../components/NavbarMain'
 
 const Products = () => {
 
@@ -27,6 +28,7 @@ const Products = () => {
 
   return (
     <div>
+      <NavbarMain />
       <div className='centerAll'>
       <Container>      
           {products.map((product,index) => {    
@@ -38,7 +40,7 @@ const Products = () => {
             })}
               
           {
-              meta.links && <ProductsPagination links={meta.links} active={meta.current_page} getProducts={getProducts}/>
+              meta.links && <ProductsPagination  links={meta.links} active={meta.current_page} getProducts={getProducts}/>
             }       
       </Container> 
       </div>      
