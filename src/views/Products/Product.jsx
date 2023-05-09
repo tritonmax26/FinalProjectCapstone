@@ -60,40 +60,12 @@ async function updateProduct(e) {
 
   return (
 
-    <div>
-      <div>
-      <Link to={`/shops/${id}`}>Back</Link>
-      <button onClick = {() => setOnEdit(!onEdit)}>
-        Edit Content
-      </button>
-      <button onClick = {deleteItem}>
-        Delete Item
-      </button>
-      </div>
-      {
-        onEdit &&
-        (
-          <div>
-            <form onSubmit={updateProduct}>
-              <h1>Update Post</h1>
-            <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
-            <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
-            <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
-            <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-            <input type="submit" value="Update Post" />              
-            </form>
-          </div>
-
-        )
-      }
-
-
-      
-      Products2 Link
-      <h1>{product.name}</h1>
-      <Card style={{ width: '18rem' }}>
+    <div> 
+      <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
+      <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>
+      <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
       <img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
-        <Card.Body>
+        <Card.Body clas>
           <Card.Title>Branch: {product.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             Name: {product.name}                   
@@ -102,10 +74,39 @@ async function updateProduct(e) {
           <Card.Text>
              Trial for for product
           </Card.Text>
-          <Card.Link href="#">order</Card.Link>
-          <Card.Link href="#">cancel</Card.Link>
+          <Card.Link className='unlink btn btn-primary span26' href="#">order</Card.Link>
+          <Card.Link className='unlink btn btn-primary span26' href="#">cancel</Card.Link>
         </Card.Body>
       </Card>
+      <div className='mt-2 container d-flex align-items-center justify-content-center'>
+      <Link className='unlink px-2 mr-2 btn btn-primary span26' to={`/shops/${id}`}>Back</Link>
+      <button className='mr-2 btn btn-success span26' onClick = {() => setOnEdit(!onEdit)}>
+        Edit Content
+      </button>
+      <button className='btn btn-danger span26' onClick = {deleteItem}>
+        Delete Item
+      </button>
+      </div>
+      {
+        onEdit &&
+        (
+          <div className='container d-flex align-items-center justify-content-center'>
+            <form onSubmit={updateProduct}>
+              <h1 className='d-flex align-items-center justify-content-center span28'>Update Post</h1>
+            <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
+            <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
+            <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
+            <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
+            <input className='ml-2 btn btn-primary span26' type="submit" value="Update Post" />              
+            </form>
+          </div>
+
+        )
+      }
+
+
+      
+
 
       
     </div>

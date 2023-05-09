@@ -77,8 +77,8 @@ async function updateShop(e) {
     
 
     <div>
-      <span className='container d-flex align-items-center justify-content-center mt-4'>Per Shop here query</span>
-      <h1 className='container d-flex align-items-center justify-content-center'>{shop.name}</h1>
+      <span className='container d-flex align-items-center justify-content-center span26'>Individual Shop Query</span>
+      <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
         <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
         <Card.Body>
@@ -98,11 +98,11 @@ async function updateShop(e) {
       </Card>
 
       <div className='container d-flex align-items-center justify-content-center'>
-      <Link className='unlink' to="/mainpage">Back</Link>
-      <button onClick = {() => setOnEdit(!onEdit)}>
+      <Link className='unlink px-2 mr-2 btn btn-primary span26' to="/mainpage">Back</Link>
+      <button className='mr-2 btn btn-success span26' onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>
-      <button onClick = {deleteItem}>
+      <button className='btn btn-danger span26' onClick = {deleteItem}>
         Delete Item
       </button>
       </div>
@@ -111,12 +111,12 @@ async function updateShop(e) {
         (
           <div className='container d-flex align-items-center justify-content-center'>
             <form onSubmit={updateShop}>
-              <h1>Update Shop</h1>
+              <h1 className='d-flex align-items-center justify-content-center span28'>Update Shop</h1>
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
             <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
             <input type="text" value={about} placeholder='about' onChange={(e)=> setAbout(e.target.value)}/>
-            <input type="submit" value="Update Shop" />              
+            <input className='ml-2 btn btn-primary span26' type="submit" value="Update Shop" />              
             </form>
           </div>
 

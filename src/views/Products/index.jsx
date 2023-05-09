@@ -1,4 +1,5 @@
 import React from 'react'
+import './../../index.css'
 import { useState, useEffect } from 'react'
 import http from '../../lib/http'
 import { Container, Form, Button } from 'react-bootstrap';
@@ -40,15 +41,15 @@ const index = () => {
 
       <Container>
       <Form onSubmit={search}>
-      <Form.Group className="mb-3 " controlId="formBasicEmail">
-        <Form.Label>Search for a Product</Form.Label>
+      <Form.Group className="mb-3 span27" controlId="formBasicEmail">
+        <Form.Label></Form.Label>
         <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
-        <Form.Text className="text-muted">
-          <span className='tcolor'>We'll never share your email with anyone else.</span>
+        <Form.Text>
+         <p className='span26'>Search for a Product. We'll never share your email with anyone else.</p>
         </Form.Text>
       </Form.Group>
 
-      <Form.Group className="mb-3">
+      <Form.Group className="mb-3 span26">
         <Form.Check
           inline
           label="Latest"
@@ -71,7 +72,7 @@ const index = () => {
         </Form.Check>
       </Form.Group>
       <Form.Group>
-        <Button variant="primary" type="submit ">Search</Button>
+        <Button className='span26' variant="primary" type="submit ">Search</Button>
       </Form.Group>
 
       </Form>     
@@ -81,7 +82,7 @@ const index = () => {
 
 
       <div className='centerAll'>
-        <h1>Products Available</h1>
+        <h1 className='span28'>Products Available</h1>
       <Container > 
           {products.map((product,index) => {    
               return(

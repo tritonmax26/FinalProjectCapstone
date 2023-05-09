@@ -26,14 +26,14 @@ async function getShops(){
   return (
 
     <div>
-      Per products per shop query
+      <span className='span26'>Per products per shop query </span>
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
        return(
         <div>
-            <h1>{shop.name}</h1>
-            <div className='productDivContainer'>
-              <Card style={{ width: '18rem' }} >
+            <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
+            <div>
+              <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
               <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
               <Card.Body>
               <Card.Title>Branch: {shop.branch}</Card.Title>
@@ -47,7 +47,7 @@ async function getShops(){
                 {/* <button onClick={Productspage}>
                   Check Product
                 </button> */}
-                <Link to={`/products/${id}`}>Check Item </Link>          
+                <Link className='unlink btn btn-warning' to={`/products/${id}`}>Check Item </Link>          
                 </Card.Body>
                 </Card>                    
             </div>  

@@ -3,7 +3,7 @@ import Loginpage from '../components/Loginpage'
 
 const Home = () => {
   return (
-    <div className='bglogin'> 
+    <div> 
         {/* <NavbarMain />                      */}
         <h4 className='text-center span28'>
         Inventory Portal

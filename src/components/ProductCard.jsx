@@ -4,21 +4,22 @@ import { Link } from 'react-router-dom'
 
 const ProductCard = ({id, name, description, price, branch, image}) => {
   return (
-       <div className='productDivContainer p-2 gap-1'>
-           <Card style={{ width: '20rem' }} className='centerAll'>
-           <img src={`${import.meta.env.VITE_API}/image/${image}`} alt="" />
-             <Card.Body className='productCard centerAll '>
+       <div>   
+       <div className='productDivContainer p-2 gap-1 '>
+           <Card style={{ width: '20rem' }}>
+           <Card.Img variant="top" src={`${import.meta.env.VITE_API}/image/${image}`} />
+             <Card.Body className='productCard centerAll'>
                     
                 <Card.Title>Branch: {branch}</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                <Link className='unlink' to={`/products/${id}`}>
+                <Card.Subtitle className="mb-2 ">
+                <Link className='unlink ' to={`/products/${id}`}>
                      Product Name: {name}
                 </Link>                        
                 </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className="mb-2 ">
                     Description: {description}                    
                 </Card.Subtitle>
-                <Card.Subtitle className="mb-2 text-muted">
+                <Card.Subtitle className="mb-2 ">
                     Price: {price}
                 </Card.Subtitle>
                 <Card.Text>
@@ -28,7 +29,8 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
                 <Card.Link href="#">cancel</Card.Link> */}
             </Card.Body>
            </Card>
-         </div>  
+         </div> 
+         </div> 
   )
 }
 

@@ -63,10 +63,10 @@ console.log(productData)
 
   return (
     <div className="mt-4">
-      <h3 className="mb-4">Create Product</h3>
+      <h3 className="mb-4 span28">Create Product</h3>
       <Form noValidate validated={validated} onSubmit={submit}>
         <Form.Group className="mb-4">
-          <Form.Label>Name</Form.Label>
+          <Form.Label className="span26">Name</Form.Label>
           <Form.Control
             required
             type="text"
@@ -79,7 +79,7 @@ console.log(productData)
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-4">
-          <Form.Label>Branch</Form.Label>
+          <Form.Label className="span26">Branch</Form.Label>
           <Form.Control
             type="text"
             placeholder="Branch"
@@ -88,7 +88,7 @@ console.log(productData)
           ></Form.Control>
         </Form.Group>
         <Form.Group className="mb-4">
-          <Form.Label>Description</Form.Label>
+          <Form.Label className="span26">Description</Form.Label>
           <Form.Control
             required
             as="textarea"
@@ -102,7 +102,7 @@ console.log(productData)
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-4">
-          <Form.Label>Price</Form.Label>
+          <Form.Label className="span26">Price</Form.Label>
           <Form.Control
             required
             as="textarea"
@@ -116,7 +116,7 @@ console.log(productData)
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group className="mb-4">
-          <Form.Label>Image</Form.Label>
+          <Form.Label className="span26">Image</Form.Label>
           <Form.Control
             type="file"
             onChange={(e) => setImage(e.target.files[0])}
@@ -124,7 +124,7 @@ console.log(productData)
         </Form.Group>
         <Form.Group>
           <div className="d-flex justify-content-end">
-            <Button variant="primary" type="submit">
+            <Button variant="primary" className="span26" type="submit">
               Create Product
             </Button>
           </div>

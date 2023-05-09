@@ -42,16 +42,17 @@ return
       <Container>
       <Form onSubmit={search}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Search for a shop</Form.Label>
+        <Form.Label className=' span26'>Search for a shop.</Form.Label>
         <Form.Control type="text" placeholder="Enter Shop Name" value={searchShop} onChange={(e)=> setSearchShop (e.target.value)}/>
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+        <span className='btn btn-warning fontwhite'> We'll never share your email with anyone else.</span>
         </Form.Text>
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Check
           inline
+          className='span26'
           label="Latest"
           name="order"
           type = "radio"
@@ -62,6 +63,7 @@ return
         </Form.Check>
         <Form.Check
           inline
+          className='span26'
           label="Oldest"
           name="order"
           type = "radio"
@@ -72,7 +74,7 @@ return
         </Form.Check>
       </Form.Group>
       <Form.Group>
-        <Button variant="primary" type="submit ">Search</Button>
+        <Button className='span26' variant="primary" type="submit ">Search</Button>
       </Form.Group>
 
       </Form>     
@@ -82,6 +84,7 @@ return
 
 
       <div className='centerAll '>
+        
         <Container >
           {shops.map((shop,index) => {      
               return(
