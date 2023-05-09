@@ -4,7 +4,7 @@ import { Form, Button } from "react-bootstrap";
 import http from '../lib/http'
 import { useNavigate } from "react-router-dom";
 
-const ProductsPage = () => {
+const ProductsPage = ({productid}) => {    
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [branch, setBranch] = useState("");
@@ -41,11 +41,13 @@ const ProductsPage = () => {
       const productData = {
         name: name,
         branch: branch,
-        description: description,
+        description: description, 
         price: price,
         image: uploadRes ? uploadRes.data.image_name : "",
+        shop_id: productid,
+        
       };
-
+console.log(productData)
       const res = await http.post("/products", productData, {
         headers: {
           "Content-Type": "application/json",
@@ -53,7 +55,7 @@ const ProductsPage = () => {
         },
       });
 
-      navigate(`/${res.data.id}`);
+    //   navigate(`/${res.data.id}`);
     } catch (e) {
       console.log(e);
     }

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import ProductCard from '../../components/ProductCard';
+import ProductsPage from '../../components/Productspage';
 
 
 const index = () => {
@@ -26,6 +27,7 @@ async function getShops(){
 
     <div>
       Per products per shop query
+      <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
        return(
         <div>

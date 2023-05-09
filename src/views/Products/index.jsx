@@ -14,7 +14,7 @@ const index = () => {
   const [order, setOrder] = useState("desc")
 
   async function getProducts(page=1){
-      const url = `/products?page=${page}&term=${searchProduct}&order=${order}`
+      const url = `/products/search?page=${page}&term=${searchProduct}&order=${order}`
       const res = await http.get(url)
       setProducts(res.data.data)
       setMeta(res.data.meta)  
@@ -42,7 +42,7 @@ const index = () => {
       <Form onSubmit={search}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Search for a Product</Form.Label>
-        <Form.Control type="text" placeholder="Enter Shop Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
+        <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
@@ -51,7 +51,7 @@ const index = () => {
       <Form.Group className="mb-3">
         <Form.Check
           inline
-          label="Lastest"
+          label="Latest"
           name="order"
           type = "radio"
           id="asc"

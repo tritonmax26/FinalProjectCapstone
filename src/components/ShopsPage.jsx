@@ -39,10 +39,10 @@ const ShopsPage = () => {
       }
 
       const shopData = {
-        name,
-        branch,
-        service,
-        about,
+        name: name,
+        branch: branch,
+        service: service,
+        about: about,
         image: uploadRes ? uploadRes.data.image_name : "",
       };
 
