@@ -40,11 +40,11 @@ const index = () => {
 
       <Container>
       <Form onSubmit={search}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3 " controlId="formBasicEmail">
         <Form.Label>Search for a Product</Form.Label>
         <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
         <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
+          <span className='tcolor'>We'll never share your email with anyone else.</span>
         </Form.Text>
       </Form.Group>
 

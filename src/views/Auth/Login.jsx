@@ -32,14 +32,14 @@ const Login = () => {
 
 
   return (
-    <div>
+    <div className='container d-flex align-items-center justify-content-center'>
         <form onSubmit={login}>
-            <h2 className='text-center'>Log In Portal</h2>
-            <h5 className='mt-4'>Email</h5>
+            <h2 className='mt-4 text-center span28'>Log In Portal</h2>
+            <h5 className='mt-4 span27'>Email</h5>
             <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
-            <h5>Password</h5>
+            <h5 className='span27'>Password</h5>
             <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
-            <br></br><input type="submit" class="btn btn-primary buttonhover" value="Sign In!" />
+            <br></br><input type="submit" class="btn btn-primary buttonhover span27" value="Sign In!" />
         </form> 
 
 

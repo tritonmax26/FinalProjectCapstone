@@ -8,7 +8,8 @@ import { Container} from 'react-bootstrap';
 function App() {
  
   return (
-    <>
+   <div className="bglogin">
+   <>
         
         <Container>
             <Routes>
@@ -18,6 +19,7 @@ function App() {
             </Routes>
         </Container>
     </>
+    </div>
   )
 }
 

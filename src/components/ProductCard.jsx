@@ -11,7 +11,7 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
                     
                 <Card.Title>Branch: {branch}</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
-                <Link to={`/products/${id}`}>
+                <Link className='unlink' to={`/products/${id}`}>
                      Product Name: {name}
                 </Link>                        
                 </Card.Subtitle>
@@ -22,7 +22,7 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
                     Price: {price}
                 </Card.Subtitle>
                 <Card.Text>
-                    <Link to={`/products/${id}`}> ID: {id}</Link>
+                    <Link className='unlink' to={`/products/${id}`}> ID: {id}</Link>
                 </Card.Text>
                 {/* <Card.Link href="#">order</Card.Link>
                 <Card.Link href="#">cancel</Card.Link> */}

@@ -35,11 +35,12 @@ const Register = () => {
 
 
   return (
-    <div><h4 className='text-center'>Application Details</h4>
+    <div className='container d-flex align-items-center justify-content-center'>
         <form onSubmit={register}>
-            <h6 className='mt-4'>Name</h6>
+            <h4 className='text-center span28'>Application Details</h4>
+            <h6 className='mt-4 span27'>Name</h6>
             <input type="text" className='mb-4' value={name} onChange={(e)=> setName(e.target.value)} placeholder='name' /> 
-            <h6>Email</h6>
+            <h6 className='span27'>Email</h6>
             <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
             {/* <h6>Address</h6>
             <input type="text" className='mb-4' placeholder='address'/> 
@@ -47,11 +48,11 @@ const Register = () => {
             <input type="text" className='mb-4' placeholder='zip code'/> 
             <h6>Contact No.</h6>
             <input type="tel" className='mb-4' placeholder='contact #'/>  */}
-            <h6>Password</h6>
+            <h6 className='span27'>Password</h6>
             <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
-            <h6>Confirm Password</h6> 
+            <h6 className='span27'>Confirm Password</h6> 
             <input type="password" className='mb-4' value={passwordConfrimation} onChange={(e)=> setPassworConfirmation(e.target.value)}placeholder='confirm password'/>
-            <br></br><input type="submit" class="btn btn-primary buttonhover" value="Register!" />
+            <br></br><input type="submit" class="btn btn-primary buttonhover span26" value="Register!" />
         </form> 
     </div>
   )

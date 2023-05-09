@@ -12,7 +12,7 @@ const Loginpage = () => {
 
 
   return (
-    <div>
+    <div className='container d-flex align-items-center justify-content-center'>
         
     <Card style={{ width: '18rem' }}>
       <Card.Body>
@@ -22,8 +22,8 @@ const Loginpage = () => {
         <Card.Text>
         Please Log in or register to Signup
         </Card.Text>
-        <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/login" className='fontwhite'>Log in </Link></Button> </div> 
-        <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/register" className='fontwhite'> Signup</Link></Button> </div> 
+        <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/login" className='fontwhite span26'>Log in </Link></Button> </div> 
+        <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/register" className='fontwhite span26'> Signup</Link></Button> </div> 
       </Card.Body>
     </Card>
 

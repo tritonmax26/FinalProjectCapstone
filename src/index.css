@@ -13,6 +13,10 @@ body {
   place-items: center;
 } */
 
+.unlink{
+  text-decoration: none;
+}
+
 .fontwhite{
   text-decoration: none;
   color: #ffffff;
@@ -20,6 +24,66 @@ body {
 
 .buttonhover{
 text-decoration: none;
+}
+
+.span28{
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 600;
+  /* text-align: center; */
+  /* margin: 10px; */
+  /* align-items: center;
+  align-content: center; */
+  /* width: 100%; */
+  /* margin-left: 1px; */
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.tcolor{
+  color: rgb(255, 255, 255);
+  /* text-align: center; */
+  /* margin: 10px; */
+  /* align-items: center;
+  align-content: center; */
+  /* width: 100%; */
+  /* margin-left: 1px; */
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.span27{
+  color: rgb(255, 255, 255);
+  font-size: 1.4rem;
+  font-weight: 600;
+  /* text-align: center; */
+  /* margin: 10px; */
+  /* align-items: center;
+  align-content: center; */
+  /* width: 100%; */
+  /* margin-left: 1px; */
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.span26{
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  font-weight: 600;
+  /* text-align: center; */
+  /* margin: 10px; */
+  /* align-items: center;
+  align-content: center; */
+  /* width: 100%; */
+  /* margin-left: 1px; */
+  text-shadow: 2px 2px 2px #000000;
+}
+
+.bglogin{
+  background-image:  url(/src/imgdata/warehouse.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  object-fit: contain;
+  height: 100vh;
 }
 
 .buttonhover:hover{
@@ -39,8 +103,8 @@ text-decoration: none;
 
 .shopDivContainer{
   display: inline-flex;
-  height: 15rem;
-  width: 20rem; 
+  /* height: 15rem;
+  width: 20rem;  */
 }
 
 .productCard{

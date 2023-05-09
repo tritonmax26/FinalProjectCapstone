@@ -74,9 +74,31 @@ async function updateShop(e) {
 
   return (
 
+    
+
     <div>
-      <div>
-      <Link to="/mainpage">Back</Link>
+      <span className='container d-flex align-items-center justify-content-center mt-4'>Per Shop here query</span>
+      <h1 className='container d-flex align-items-center justify-content-center'>{shop.name}</h1>
+      <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
+        <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
+        <Card.Body>
+          <Card.Title>Branch: {shop.branch}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            Name: {shop.name}                   
+          </Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">Data: </Card.Subtitle>
+          <Card.Text>
+             About: {shop.about}
+          </Card.Text>
+          {/* <button onClick={Productspage}>
+            Check Product
+          </button> */}
+          <Link className='unlink' to= {`/shop/products/${id}`} >Check Products </Link>          
+        </Card.Body>
+      </Card>
+
+      <div className='container d-flex align-items-center justify-content-center'>
+      <Link className='unlink' to="/mainpage">Back</Link>
       <button onClick = {() => setOnEdit(!onEdit)}>
         Edit Content
       </button>
@@ -87,7 +109,7 @@ async function updateShop(e) {
       {
         onEdit &&
         (
-          <div>
+          <div className='container d-flex align-items-center justify-content-center'>
             <form onSubmit={updateShop}>
               <h1>Update Shop</h1>
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
@@ -103,25 +125,7 @@ async function updateShop(e) {
 
 
       
-      Per Shop here query
-      <h1>{shop.name}</h1>
-      <Card style={{ width: '18rem' }} >
-        <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
-        <Card.Body>
-          <Card.Title>Branch: {shop.branch}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            Name: {shop.name}                   
-          </Card.Subtitle>
-          <Card.Subtitle className="mb-2 text-muted">Data: </Card.Subtitle>
-          <Card.Text>
-             About: {shop.about}
-          </Card.Text>
-          {/* <button onClick={Productspage}>
-            Check Product
-          </button> */}
-          <Link to= {`/shop/products/${id}`} >Check Products </Link>          
-        </Card.Body>
-      </Card>
+
 
       
     </div>

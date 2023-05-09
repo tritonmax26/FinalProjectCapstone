@@ -7,11 +7,11 @@ const ShopCard = ({id, name, branch, service, about, name2 ,image}) => {
     <div>      
         <div className='shopDivContainer p-2 gap-1'>
             <Card style={{ width: '20rem' }}>
-                <img src={`${import.meta.env.VITE_API}/image/${image}`} alt="" />
+            <Card.Img variant="top" src={`${import.meta.env.VITE_API}/image/${image}`} />
                 <Card.Body className='productCard centerAll'>
                     <Card.Title>Branch: {branch}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">
-                    <Link to={`/shops/${id}`}> 
+                    <Link className='unlink' to={`/shops/${id}`}> 
                       Shop Name: {name}
                     </Link>                        
                     </Card.Subtitle>

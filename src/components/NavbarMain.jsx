@@ -7,12 +7,12 @@ const NavbarMain = () => {
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand  as={Link} to="/">S.A.P. Stocks & Holdings Inc.</Navbar.Brand>
+        <Navbar.Brand className='span28' as={Link} to="/">S.A.P. Stocks & Holdings Inventory Data</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
           </Nav>
-          <Nav className="mr-auto">
+          <Nav className="mr-auto span26">
             <Nav.Link as={Link} to="/mainpage">Home</Nav.Link>
             <Nav.Link as={Link} to="/shops" >Shops</Nav.Link>
             <Nav.Link as={Link} to="/products" >Products</Nav.Link>            
