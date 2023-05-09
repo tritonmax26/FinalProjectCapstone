@@ -1,85 +1,136 @@
-import React, { useState, useEffect } from 'react'
+
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import http from '../lib/http'
-import { useNavigate} from 'react-router-dom'
-import Products from "../views/Products"
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
-const Productspage = () => {
-    const [loggedIn, setLoggedin] = useState(localStorage.getItem("token"))
-    const [name,setName] = useState('')
-    const [description,setDescription] = useState('')
-    const [price,setPrice] = useState('')
-    const [branch,setBranch] = useState('')
-    const navigate = useNavigate()
+const ProductsPage = () => {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [branch, setBranch] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState('');
+  const [image, setImage] = useState();
+  const [validated, setValidated] = useState(false);
 
-    async function createProduct(e) {
-        e.preventDefault()
-        if (!name || !description || !price || !branch) {
-            alert ("Please Fill all tabs")
-            return
-        }
+  async function submit(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-        const res = await http.post("/products", {
-            name: name,
-            description: description,
-            price: price,
-            branch: branch
+    setValidated(true);
+
+    if (!name || !branch || !description || !price) {
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("image", image);
+
+      let uploadRes;
+
+      if (image) {
+        uploadRes = await http.post("/upload", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+      }
+
+      const productData = {
+        name: name,
+        branch: branch,
+        description: description,
+        price: price,
+        image: uploadRes ? uploadRes.data.image_name : "",
+      };
+
+      const res = await http.post("/products", productData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        {
-            headers : {
-                "Authorization": `Bearer ${loggedIn}`
-            }
-        }
-        )              
-        
+      });
+
+      navigate(`/${res.data.id}`);
+    } catch (e) {
+      console.log(e);
     }
-       
-
-    async function logout(){
-        await http.post("/logout", null, {
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}` 
-            }
-        })
-
-        localStorage.removeItem('token')
-        setLoggedin(false)
-        navigate("/")        
-    }
-
-    // console.log(loggedIn)
-
+  }
 
   return (
-    <div>
-        <Link to="/mainpage">Back</Link>
-        Products Page
-        <button onClick={logout}>
-            Logged out
-        </button>
-
-        {loggedIn && (
-            <form onSubmit={createProduct}>
-                <input type="text" value={name} placeholder='product' onChange={(e)=> setName(e.target.value)}/>
-                <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
-                <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
-                <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-                <input type="submit" value="Submit" />
-            </form>
-        )}
-
-        <div>
-            <Products />
-
-        </div>
-
+    <div className="mt-4">
+      <h3 className="mb-4">Create Product</h3>
+      <Form noValidate validated={validated} onSubmit={submit}>
+        <Form.Group className="mb-4">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter a Name
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Branch</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Branch"
+            value={branch}
+            onChange={(e) => setBranch(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
+            placeholder="Description"
+            value={description}
+            rows={1}
+            onChange={(e) => setDescription(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter a description
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Price</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
+            placeholder="Price"
+            value={price}
+            rows={1}
+            onChange={(e) => setPrice(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter Price
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </Form.Group>
+        <Form.Group>
+          <div className="d-flex justify-content-end">
+            <Button variant="primary" type="submit">
+              Create Product
+            </Button>
+          </div>
+        </Form.Group>
+      </Form>
     </div>
-  )
-}
+  );
+};
 
-export default Productspage
+export default ProductsPage;
 
-// name
-// description
-// price
-// branch

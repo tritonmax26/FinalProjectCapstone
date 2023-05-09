@@ -36,8 +36,8 @@ return
           {shops.map((shop,index) => {      
               return(
 
-                    <div className='shopDivContainer'>
-                      <ShopCard key={index} id={shop.id} name={shop.name} branch={shop.branch} service={shop.service} about={shop.about} image={shop.image} name2={shop.user.name}/>
+                    <div className='shopDivContainer' key={index}>
+                      <ShopCard  id={shop.id} name={shop.name} branch={shop.branch} service={shop.service} about={shop.about} image={shop.image} name2={shop.user.name}/>
                     </div>
 
                   )

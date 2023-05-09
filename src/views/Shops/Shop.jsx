@@ -89,7 +89,7 @@ async function updateShop(e) {
         (
           <div>
             <form onSubmit={updateShop}>
-              <h1>Update Product</h1>
+              <h1>Update Shop</h1>
             <input type="text" value={name} placeholder='name' onChange={(e)=> setName(e.target.value)}/>
             <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
@@ -103,7 +103,7 @@ async function updateShop(e) {
 
 
       
-      Per Shop query
+      Per Shop here query
       <h1>{shop.name}</h1>
       <Card style={{ width: '18rem' }} >
         <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />

@@ -71,7 +71,7 @@ const routes = [
   {
     path: "/search",
     element: <Search />
-  },
+  }, 
 
 
 

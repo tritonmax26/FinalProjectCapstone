@@ -1,76 +1,137 @@
-import React, { useState, useEffect } from 'react'
+
+import React, { useState } from "react";
+import { Form, Button } from "react-bootstrap";
 import http from '../lib/http'
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 const ShopsPage = () => {
-    const [loggedIn, setLoggedin] = useState(localStorage.getItem("token"))
-    const [name,setName] = useState('')
-    const [service,setService] = useState('')
-    const [branch,setBranch] = useState('')
-    const [about,setAbout] = useState('')
-    const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [branch, setBranch] = useState("");
+  const [service, setService] = useState("");
+  const [about, setAbout] = useState("");
+  const [image, setImage] = useState();
+  const [validated, setValidated] = useState(false);
 
-    async function createShop(e) {
-        e.preventDefault()
-        if (!name || !service || !branch || !about) {
-            alert ("Please Fill all tabs")
-            return
-        }
+  async function submit(e) {
+    e.preventDefault();
+    e.stopPropagation();
 
-        const res = await http.post("/shops", {
-            name: name,
-            service: service,
-            branch: branch,
-            about: about
+    setValidated(true);
+
+    if (!name || !branch || !service || !about) {
+      return;
+    }
+
+    try {
+      const formData = new FormData();
+      formData.append("image", image);
+
+      let uploadRes;
+
+      if (image) {
+        uploadRes = await http.post("/upload", formData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+      }
+
+      const shopData = {
+        name,
+        branch,
+        service,
+        about,
+        image: uploadRes ? uploadRes.data.image_name : "",
+      };
+
+      const res = await http.post("/shops", shopData, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        {
-            headers : {
-                "Authorization": `Bearer ${loggedIn}`
-            }
-        }
-        )              
-        
+      });
+
+      navigate(`/${res.data.id}`);
+    } catch (e) {
+      console.log(e);
     }
-       
-
-    async function logout(){
-        await http.post("/logout", null, {
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem("token")}` 
-            }
-        })
-
-        localStorage.removeItem('token')
-        setLoggedin(false)
-        navigate("/")        
-    }
-
-    // console.log(loggedIn)
-
+  }
 
   return (
-    <div>Mainpage
-        <button onClick={logout}>
-            Logged out
-        </button>
-
-        {loggedIn && (
-            <form onSubmit={createShop}>
-                <input type="text" value={name} placeholder='shop' onChange={(e)=> setName(e.target.value)}/>
-                <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-                <input type="text" value={service} placeholder='service' onChange={(e)=> setService(e.target.value)}/>
-                <input type="text" value={about} placeholder='about' onChange={(e)=> setAbout(e.target.value)}/>
-                <input type="submit" value="Submit" />
-            </form>
-        )}        
-
+    <div className="mt-4">
+      <h3 className="mb-4">Create Shop</h3>
+      <Form noValidate validated={validated} onSubmit={submit}>
+        <Form.Group className="mb-4">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
+            required
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter a Name
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Branch</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Branch"
+            value={branch}
+            onChange={(e) => setBranch(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Service</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
+            placeholder="Service"
+            value={service}
+            rows={1}
+            onChange={(e) => setService(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter a Service
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>About</Form.Label>
+          <Form.Control
+            required
+            as="textarea"
+            placeholder="About"
+            value={about}
+            rows={1}
+            onChange={(e) => setAbout(e.target.value)}
+          ></Form.Control>
+          <Form.Control.Feedback type="invalid">
+            Please enter an About
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            type="file"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
+        </Form.Group>
+        <Form.Group>
+          <div className="d-flex justify-content-end">
+            <Button variant="primary" type="submit">
+              Create Shop
+            </Button>
+          </div>
+        </Form.Group>
+      </Form>
     </div>
-  )
-}
+  );
+};
 
-export default ShopsPage
+export default ShopsPage;
 
-// name
-// description
-// price
-// branch
+// id, name, branch, service, about, name2 ,image
