@@ -95,6 +95,11 @@ text-decoration: none;
   color: black;
 }
 
+.bgyellow{
+background-color: #ffd900;
+}
+
+
 .productDivContainer{
   display: inline-flex;
   height: 15rem;

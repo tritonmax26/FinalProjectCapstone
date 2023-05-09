@@ -5,9 +5,9 @@ const Home = () => {
   return (
     <div> 
         {/* <NavbarMain />                      */}
-        <h4 className='text-center span28'>
+        <p className=' text-center span28'>
         Inventory Portal
-        </h4>
+        </p>
         <Loginpage />        
     </div>
   )
