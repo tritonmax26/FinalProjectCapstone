@@ -5,6 +5,7 @@ import http from '../../lib/http'
 import ShopCard from '../../components/ShopCard'
 import ShopsPagination from '../../components/ShopsPagination'
 import NavbarMain from '../../components/NavbarMain'
+import CopyRights from '../../components/CopyRights'
 
 const Shops = () => {
 
@@ -38,53 +39,51 @@ return
   return (
     <div>
       <NavbarMain />
+      <div>
+          <Container>
+          <Form onSubmit={search}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label className=' span26'>Search for a shop.</Form.Label>
+            <Form.Control type="text" placeholder="Enter Shop Name" value={searchShop} onChange={(e)=> setSearchShop (e.target.value)}/>
+            <Form.Text className="text-muted">
+            <span className='btn btn-warning fontwhite'> Please wait for the page to load</span>
+            </Form.Text>
+          </Form.Group>
 
-      <Container>
-      <Form onSubmit={search}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label className=' span26'>Search for a shop.</Form.Label>
-        <Form.Control type="text" placeholder="Enter Shop Name" value={searchShop} onChange={(e)=> setSearchShop (e.target.value)}/>
-        <Form.Text className="text-muted">
-        <span className='btn btn-warning fontwhite'> We'll never share your email with anyone else.</span>
-        </Form.Text>
-      </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Check
+              inline
+              className='span26'
+              label="Latest"
+              name="order"
+              type = "radio"
+              id="asc"
+              value={order}
+              onChange= {(e) => setOrder(e.target.id)}
+            >
+            </Form.Check>
+            <Form.Check
+              inline
+              className='span26'
+              label="Oldest"
+              name="order"
+              type = "radio"
+              id="desc"
+              value={order}
+              onChange= {(e) => setOrder(e.target.id)}
+            >
+            </Form.Check>
+          </Form.Group>
+          <Form.Group>
+            <Button className='span26' variant="primary" type="submit ">Search</Button>
+          </Form.Group>
 
-      <Form.Group className="mb-3">
-        <Form.Check
-          inline
-          className='span26'
-          label="Latest"
-          name="order"
-          type = "radio"
-          id="asc"
-          value={order}
-          onChange= {(e) => setOrder(e.target.id)}
-        >
-        </Form.Check>
-        <Form.Check
-          inline
-          className='span26'
-          label="Oldest"
-          name="order"
-          type = "radio"
-          id="desc"
-          value={order}
-          onChange= {(e) => setOrder(e.target.id)}
-        >
-        </Form.Check>
-      </Form.Group>
-      <Form.Group>
-        <Button className='span26' variant="primary" type="submit ">Search</Button>
-      </Form.Group>
+          </Form>   
+          </Container>
+      </div>
 
-      </Form>     
-
-
-      </Container>
-
-
-      <div className='centerAll '>
-        
+      <div className='centerAll'>
+      <h1 className='span28'>Shops Available</h1>  
         <Container >
           {shops.map((shop,index) => {      
               return(
@@ -92,13 +91,16 @@ return
                     <div className='shopDivContainer' key={index}>
                       <ShopCard  id={shop.id} name={shop.name} branch={shop.branch} service={shop.service} about={shop.about} image={shop.image} name2={shop.user.name}/>
                     </div>
-
                   )
                 })}
+        </Container>        
+        <Container >  
           {
             meta.links && <ShopsPagination  links={meta.links} active={meta.current_page} getShops={getShops}/>
           }
       </Container>
+
+      <CopyRights />
       </div>
     </div>
   )

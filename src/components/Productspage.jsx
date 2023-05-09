@@ -12,6 +12,7 @@ const ProductsPage = ({productid}) => {
   const [price, setPrice] = useState('');
   const [image, setImage] = useState();
   const [validated, setValidated] = useState(false);
+  const [onEdit, setOnEdit] = useState(false);
 
   async function submit(e) {
     e.preventDefault();
@@ -47,7 +48,7 @@ const ProductsPage = ({productid}) => {
         shop_id: productid,
         
       };
-console.log(productData)
+// console.log(productData)
       const res = await http.post("/products", productData, {
         headers: {
           "Content-Type": "application/json",
@@ -55,14 +56,22 @@ console.log(productData)
         },
       });
 
-    //   navigate(`/${res.data.id}`);
+      navigate(`/shop/products/${id}`);
     } catch (e) {
       console.log(e);
     }
+    setOnEdit(false)
   }
 
   return (
     <div className="mt-4">
+      <button className='mr-2 btn btn-success span26' onClick = {() => setOnEdit(!onEdit)}>
+        Add Product
+      </button>
+{
+  onEdit &&
+    (
+      <div>
       <h3 className="mb-4 span28">Create Product</h3>
       <Form noValidate validated={validated} onSubmit={submit}>
         <Form.Group className="mb-4">
@@ -130,6 +139,9 @@ console.log(productData)
           </div>
         </Form.Group>
       </Form>
+      </div>
+    )
+}
     </div>
   );
 };

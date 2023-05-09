@@ -6,6 +6,8 @@ import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
 import ProductCard from '../../components/ProductCard';
 import ProductsPage from '../../components/Productspage';
+import NavbarMain from '../../components/NavbarMain';
+import CopyRights from '../../components/CopyRights';
 
 
 const index = () => {
@@ -24,8 +26,8 @@ async function getShops(){
 }, [])
 
   return (
-
     <div>
+      <NavbarMain/>
       <span className='span26'>Per products per shop query </span>
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
@@ -54,7 +56,7 @@ async function getShops(){
           </div>
           )
       })}     
-    
+    <CopyRights />
     </div>
   )
 }

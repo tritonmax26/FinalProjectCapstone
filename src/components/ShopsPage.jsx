@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import http from '../lib/http'
 import { useNavigate } from "react-router-dom";
+import NavbarMain from './NavbarMain'
+import CopyRights from './CopyRights'
 
 const ShopsPage = () => {
   const navigate = useNavigate();
@@ -53,14 +55,15 @@ const ShopsPage = () => {
         },
       });
 
-      navigate(`/${res.data.id}`);
+      navigate(`/mainpage`);
     } catch (e) {
       console.log(e);
     }
   }
 
-  return (
+  return (    
     <div className="mt-4">
+      <NavbarMain />
       <h3 className="mb-4">Create Shop</h3>
       <Form noValidate validated={validated} onSubmit={submit}>
         <Form.Group className="mb-4">
@@ -128,6 +131,7 @@ const ShopsPage = () => {
           </div>
         </Form.Group>
       </Form>
+      <CopyRights />
     </div>
   );
 };

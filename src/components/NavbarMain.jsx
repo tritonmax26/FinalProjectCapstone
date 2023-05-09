@@ -14,8 +14,11 @@ const NavbarMain = () => {
           </Nav>
           <Nav className="mr-auto span26">
             <Nav.Link as={Link} to="/mainpage">Home</Nav.Link>
-            <Nav.Link as={Link} to="/shops" >Shops</Nav.Link>
-            <Nav.Link as={Link} to="/products" >Products</Nav.Link>            
+            <Nav.Link as={Link} to="/shoppage" >Create Shops</Nav.Link>     
+            <NavDropdown title="Search" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/shops">Shops</NavDropdown.Item>              
+              <NavDropdown.Item as={Link} to="/products">Product</NavDropdown.Item>   
+            </NavDropdown>
             <Nav.Link as={Link} to="/logout">Log Out</Nav.Link>        
           </Nav>      
         </Navbar.Collapse>

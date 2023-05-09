@@ -6,6 +6,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import ProductCard from '../../components/ProductCard'
 import ProductsPagination from '../../components/ProductsPagination'
 import NavbarMain from '../../components/NavbarMain'
+import CopyRights from '../../components/CopyRights'
 
 const index = () => {
 
@@ -38,51 +39,51 @@ const index = () => {
   return (
     <div>
       <NavbarMain />
+    <div>
+        <Container>
+          <Form onSubmit={search}>
+          <Form.Group className="mb-3 span27" controlId="formBasicEmail">
+            <Form.Label></Form.Label>
+            <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
+            <Form.Text>
+            <p className='span26'>Search for a Product. We'll never share your email with anyone else.</p>
+            </Form.Text>
+          </Form.Group>
 
-      <Container>
-      <Form onSubmit={search}>
-      <Form.Group className="mb-3 span27" controlId="formBasicEmail">
-        <Form.Label></Form.Label>
-        <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
-        <Form.Text>
-         <p className='span26'>Search for a Product. We'll never share your email with anyone else.</p>
-        </Form.Text>
-      </Form.Group>
+          <Form.Group className="mb-3 span26">
+            <Form.Check
+              inline
+              label="Latest"
+              name="order"
+              type = "radio"
+              id="asc"
+              value={order}
+              onChange= {(e) => setOrder(e.target.id)}
+            >
+            </Form.Check>
+            <Form.Check
+              inline
+              label="Oldest"
+              name="order"
+              type = "radio"
+              id="desc"
+              value={order}
+              onChange= {(e) => setOrder(e.target.id)}
+            >
+            </Form.Check>
+          </Form.Group>
+          <Form.Group>
+            <Button className='span26' variant="primary" type="submit ">Search</Button>
+          </Form.Group>
 
-      <Form.Group className="mb-3 span26">
-        <Form.Check
-          inline
-          label="Latest"
-          name="order"
-          type = "radio"
-          id="asc"
-          value={order}
-          onChange= {(e) => setOrder(e.target.id)}
-        >
-        </Form.Check>
-        <Form.Check
-          inline
-          label="Oldest"
-          name="order"
-          type = "radio"
-          id="desc"
-          value={order}
-          onChange= {(e) => setOrder(e.target.id)}
-        >
-        </Form.Check>
-      </Form.Group>
-      <Form.Group>
-        <Button className='span26' variant="primary" type="submit ">Search</Button>
-      </Form.Group>
-
-      </Form>     
+          </Form>     
 
 
-      </Container>
-
+        </Container>
+    </div>
 
       <div className='centerAll'>
-        <h1 className='span28'>Products Available</h1>
+      <h1 className='span28'>Products Available</h1>
       <Container > 
           {products.map((product,index) => {    
               return(
@@ -91,12 +92,15 @@ const index = () => {
                 </div>  
             )
             })}
-              
+      </Container>       
+      <Container >         
             {
               meta.links && <ProductsPagination  links={meta.links} active={meta.current_page} getProducts={getProducts}/>
             }       
       </Container> 
-      </div>      
+      </div>
+
+      <CopyRights />            
     </div>
   )
 }

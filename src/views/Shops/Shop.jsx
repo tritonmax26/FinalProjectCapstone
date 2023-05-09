@@ -4,6 +4,8 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import NavbarMain from '../../components/NavbarMain';
+import CopyRights from '../../components/CopyRights';
 
 
 const Shop = () => {
@@ -50,7 +52,7 @@ async function updateShop(e) {
         }
     }
     )
-    navigate("/")
+    navigate("/mainpage")
   }
 
   // async function getImage () {
@@ -72,11 +74,9 @@ async function updateShop(e) {
     return
 }, [])
 
-  return (
-
-    
-
+  return (   
     <div>
+    <NavbarMain />
       <span className='container d-flex align-items-center justify-content-center span26'>Individual Shop Query</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
@@ -122,12 +122,7 @@ async function updateShop(e) {
 
         )
       }
-
-
-      
-
-
-      
+    <CopyRights />
     </div>
   )
 }

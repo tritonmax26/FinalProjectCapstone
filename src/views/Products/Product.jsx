@@ -4,6 +4,8 @@ import { useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from 'react'
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+import NavbarMain from '../../components/NavbarMain';
+import CopyRights from '../../components/CopyRights';
 
 
 const Product = () => {
@@ -15,6 +17,7 @@ const Product = () => {
   const [description,setDescription] = useState('');
   const [price,setPrice] = useState('');
   const [branch,setBranch] = useState('');
+  const [image, setImage] = useState();
 
 async function getProduct(){
       const res = await http.get (`/products/${id}`)
@@ -28,7 +31,8 @@ async function updateProduct(e) {
         name: name ? name : product.name,
         description: description ? description : product.description,
         price: price ? price : product.price,
-        branch: branch ? branch : product.branch
+        branch: branch ? branch : product.branch,
+        image: image ? image : uploadRes ? uploadRes.data.image_name : "",
       },
       {
           headers : {
@@ -49,7 +53,7 @@ async function updateProduct(e) {
         }
     }
     )
-    navigate("/")
+    navigate(`/shop/products/${id}`)
   }
 
 
@@ -59,8 +63,8 @@ async function updateProduct(e) {
 }, [])
 
   return (
-
     <div> 
+      <NavbarMain />
       <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
@@ -97,18 +101,17 @@ async function updateProduct(e) {
             <input type="text" value={description} placeholder='description' onChange={(e)=> setDescription(e.target.value)}/>
             <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
-            <input className='ml-2 btn btn-primary span26' type="submit" value="Update Post" />              
+            
+            <input type="file" value={image} placeholder='image' onChange={(e)=> setImage(e.target.files[0])}/>
+
+            <input className='ml-2 btn btn-primary span26' type="submit" value="Update Post" />
+
             </form>
           </div>
 
         )
       }
-
-
-      
-
-
-      
+    <CopyRights />
     </div>
   )
 }

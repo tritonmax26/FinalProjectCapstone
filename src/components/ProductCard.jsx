@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 const ProductCard = ({id, name, description, price, branch, image}) => {
   return (
-       <div>   
+  <div>   
        <div className='productDivContainer p-2 gap-1 '>
-           <Card style={{ width: '20rem' }}>
+           <Card style={{ width: '15rem', height: '22rem' }}>
            <Card.Img variant="top" src={`${import.meta.env.VITE_API}/image/${image}`} />
              <Card.Body className='productCard centerAll'>
                     
@@ -22,15 +22,13 @@ const ProductCard = ({id, name, description, price, branch, image}) => {
                 <Card.Subtitle className="mb-2 ">
                     Price: {price}
                 </Card.Subtitle>
-                <Card.Text>
+                {/* <Card.Text>
                     <Link className='unlink' to={`/products/${id}`}> ID: {id}</Link>
-                </Card.Text>
-                {/* <Card.Link href="#">order</Card.Link>
-                <Card.Link href="#">cancel</Card.Link> */}
+                </Card.Text>          */}
             </Card.Body>
            </Card>
          </div> 
-         </div> 
+    </div> 
   )
 }
 
