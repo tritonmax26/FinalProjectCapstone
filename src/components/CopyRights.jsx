@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom'
 
 const CopyRights = () => {
   return (
-    <footer>
+    <div>
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand className='span28'>&copy; S.A.P. Stocks & Holdings Inventory Data, All rights Reserved</Navbar.Brand>
+        <Navbar.Brand className='span28'>&copy; S.A.P. Stocks & Holdings Inventory Data, All rights reserved</Navbar.Brand>
       </Container>
     </Navbar>
 
 
-    </footer>
+    </div>
   )
 }
 

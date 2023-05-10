@@ -62,7 +62,7 @@ const ShopsPage = () => {
   }
 
   return (    
-    <div className="mt-4">
+    <div className="mt-4 spancontainer">
       <NavbarMain />
       <h3 className="mb-4 span28">Create Shop</h3>
       <Form noValidate validated={validated} onSubmit={submit}>

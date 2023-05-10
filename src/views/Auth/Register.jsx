@@ -35,7 +35,7 @@ const Register = () => {
 
 
   return (
-    <div className='container d-flex align-items-center justify-content-center'>
+    <div className='spancontainer container d-flex align-items-center justify-content-center'>
         <form onSubmit={register}>
             <h4 className='text-center span28'>Application Details</h4>
             <h6 className='mt-4 span27'>Name</h6>

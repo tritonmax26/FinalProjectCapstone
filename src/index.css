@@ -76,14 +76,36 @@ text-decoration: none;
   text-shadow: 2px 2px 2px #000000;
 }
 
-.bglogin{
-  background-image:  url(/src/imgdata/warehouse.jpg);
+.pad50{
+  padding-top: 100px;
+}
+
+.spancontainer{
   /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   object-fit: contain;
   height: 100vh;
+  opacity: 100%;
+}
+
+.bglogin{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)),  url(/src/imgdata/warehouse.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  object-fit: contain;
+  height: 100vh;
+}
+
+.bgfull{
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)),  url(/src/imgdata/warehouse.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
 }
 
 .buttonhover:hover{

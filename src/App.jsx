@@ -8,7 +8,7 @@ import { Container} from 'react-bootstrap';
 function App() {
  
   return (
-   <div className="bglogin">
+   <div className="bgfull">
    <>
         
         <Container>

@@ -32,7 +32,7 @@ const Login = () => {
 
 
   return (
-    <div className='container d-flex align-items-center justify-content-center'>
+    <div className='spancontainer container d-flex align-items-center justify-content-center'>
         <form onSubmit={login}>
             <h2 className='mt-4 text-center span28'>Log In Portal</h2>
             <h5 className='mt-4 span27'>Email</h5>

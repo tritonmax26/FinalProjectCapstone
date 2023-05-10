@@ -15,7 +15,7 @@ const Logout = () => {
         navigate("/")        
     }
   return (
-    <div>
+    <div className='spancontainer'>
         <Home />
     </div>
   )
