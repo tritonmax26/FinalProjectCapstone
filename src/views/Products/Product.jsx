@@ -68,7 +68,7 @@ async function updateProduct(e) {
       <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
-      <img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
+      <Card.Img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
         <Card.Body clas>
           <Card.Title>Branch: {product.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

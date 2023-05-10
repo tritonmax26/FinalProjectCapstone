@@ -15,7 +15,7 @@ const NavbarMain = () => {
           <Nav className="mr-auto">
             <Nav.Link className='span26' as={Link} to="/mainpage">Home</Nav.Link>
             <Nav.Link className='span26' as={Link} to="/shoppage" >Create Shops</Nav.Link>     
-            <NavDropdown className='span26' title="Search" id="basic-nav-dropdown">
+            <NavDropdown title="Search" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/shops">Shops</NavDropdown.Item>              
               <NavDropdown.Item as={Link} to="/products">Product</NavDropdown.Item>   
             </NavDropdown>
