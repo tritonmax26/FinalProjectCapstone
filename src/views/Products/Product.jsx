@@ -63,7 +63,7 @@ async function updateProduct(e) {
 }, [])
 
   return (
-    <div> 
+    <div className='spancontainer'> 
 
       <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>

@@ -62,7 +62,7 @@ const ShopsPage = () => {
   }
 
   return (    
-    <div className="spancontainer">
+    <div className="spancontainer container">
       <h3 className="mb-4 span28">Create Shop</h3>
       <Form noValidate validated={validated} onSubmit={submit}>
         <Form.Group className="mb-4">
