@@ -32,7 +32,7 @@ async function updateProduct(e) {
         description: description ? description : product.description,
         price: price ? price : product.price,
         branch: branch ? branch : product.branch,
-        image: image ? image : uploadRes ? uploadRes.data.image_name : "",
+        // image: image ? image : uploadRes ? uploadRes.data.image_name : "",
       },
       {
           headers : {
@@ -102,7 +102,7 @@ async function updateProduct(e) {
             <input type="number" value={price} placeholder='price' onChange={(e)=> setPrice(e.target.value)}/>
             <input type="text" value={branch} placeholder='branch' onChange={(e)=> setBranch(e.target.value)}/>
             
-            <input type="file" value={image} placeholder='image' onChange={(e)=> setImage(e.target.files[0])}/>
+            {/* <input type="file" value={image} placeholder='image' onChange={(e)=> setImage(e.target.files[0])}/> */}
 
             <input className='ml-2 btn btn-primary span26' type="submit" value="Update Post" />
 
