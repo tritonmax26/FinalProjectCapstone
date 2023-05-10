@@ -12,14 +12,14 @@ const NavbarMain = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
           </Nav>
-          <Nav className="mr-auto span26">
-            <Nav.Link as={Link} to="/mainpage">Home</Nav.Link>
-            <Nav.Link as={Link} to="/shoppage" >Create Shops</Nav.Link>     
-            <NavDropdown title="Search" id="basic-nav-dropdown">
+          <Nav className="mr-auto">
+            <Nav.Link className='span26' as={Link} to="/mainpage">Home</Nav.Link>
+            <Nav.Link className='span26' as={Link} to="/shoppage" >Create Shops</Nav.Link>     
+            <NavDropdown className='span26' title="Search" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/shops">Shops</NavDropdown.Item>              
               <NavDropdown.Item as={Link} to="/products">Product</NavDropdown.Item>   
             </NavDropdown>
-            <Nav.Link as={Link} to="/logout">Log Out</Nav.Link>        
+            <Nav.Link className='span26' as={Link} to="/logout">Log Out</Nav.Link>        
           </Nav>      
         </Navbar.Collapse>
       </Container>
