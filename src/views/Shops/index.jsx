@@ -38,7 +38,6 @@ return
 
   return (
     <div>
-      <NavbarMain />
       <div>
           <Container>
           <Form onSubmit={search}>
@@ -82,7 +81,7 @@ return
           </Container>
       </div>
 
-      <div className='centerAll'>
+      <div className='centerAll container'>
       <h1 className='span28'>Shops Available</h1>  
         <Container >
           {shops.map((shop,index) => {      
@@ -100,7 +99,6 @@ return
           }
       </Container>
 
-      <CopyRights />
       </div>
     </div>
   )

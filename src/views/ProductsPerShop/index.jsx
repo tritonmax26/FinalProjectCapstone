@@ -27,7 +27,6 @@ async function getShops(){
 
   return (
     <div>
-      <NavbarMain/>
       <span className='span26'>Per products per shop query </span>
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
@@ -56,7 +55,6 @@ async function getShops(){
           </div>
           )
       })}     
-    <CopyRights />
     </div>
   )
 }

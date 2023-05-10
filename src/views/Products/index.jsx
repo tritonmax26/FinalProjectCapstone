@@ -38,7 +38,6 @@ const index = () => {
 
   return (
     <div>
-      <NavbarMain />
     <div>
         <Container>
           <Form onSubmit={search}>
@@ -82,7 +81,7 @@ const index = () => {
         </Container>
     </div>
 
-      <div className='centerAll'>
+      <div className='centerAll container'>
       <h1 className='span28'>Products Available</h1>
       <Container > 
           {products.map((product,index) => {    
@@ -99,8 +98,7 @@ const index = () => {
             }       
       </Container> 
       </div>
-
-      <CopyRights />            
+           
     </div>
   )
 }

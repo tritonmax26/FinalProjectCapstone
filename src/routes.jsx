@@ -12,70 +12,75 @@ import Shop from "./views/Shops/Shop"
 import Search from "./views/Search"
 import Mainpage from "./views/Mainpage"
 import ProductsPerShop from "./views/ProductsPerShop"
+import Layout from "../src/layout"
 
 
 const routes = [
   {
-    path: "/",
-    element: <Home />
-  },
-  {
-    path: "/mainpage",
-    element: <Mainpage />
-  },
-  {
-    path: "/loginpage",
-    element: <Loginpage />
-  },
-  {
-    path: "/register",
-    element: <Register />
-  },
-  {
-    path: "/login",
-    element: <Login />
-  },
-  {
-    path: "/logout",
-    element: <Logout />
-  },
-  {
-    path: "/shops",
-    element: <Shops />
-  },
-  {
-    path: "/shops/:id",
-    element: <Shop />
-  },
-  {
-    path: "/shoppage",
-    element: <ShopsPage />
-  },
-  {
-    path: "/products",
-    element: <Products />
-  },
-  {
-    path: "/shop/products/:id",
-    element: <ProductsPerShop />
-  },
-  {
-    path: "/productspage",
-    element: <Productspage/>
-  },
-
-  {
-    path: "/products/:id",
-    element: <Product />
-  },
-  {
-    path: "/search",
-    element: <Search />
-  }, 
-
-
-
-
+    path: "/*",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/mainpage",
+        element: <Mainpage />
+      },
+      {
+        path: "/loginpage",
+        element: <Loginpage />
+      },
+      {
+        path: "/register",
+        element: <Register />
+      },
+      {
+        path: "/login",
+        element: <Login />
+      },
+      {
+        path: "/logout",
+        element: <Logout />
+      },
+      {
+        path: "/shops",
+        element: <Shops />
+      },
+      {
+        path: "/shops/:id",
+        element: <Shop />
+      },
+      {
+        path: "/shoppage",
+        element: <ShopsPage />
+      },
+      {
+        path: "/products",
+        element: <Products />
+      },
+      {
+        path: "/shop/products/:id",
+        element: <ProductsPerShop />
+      },
+      {
+        path: "/productspage",
+        element: <Productspage/>
+      },
+    
+      {
+        path: "/products/:id",
+        element: <Product />
+      },
+      {
+        path: "/search",
+        element: <Search />
+      }, 
+      
+    ]
+  }
 ]
+
 
 export default routes

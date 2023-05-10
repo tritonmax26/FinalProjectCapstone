@@ -72,6 +72,7 @@ const ProductsPage = ({productid}) => {
   onEdit &&
     (
       <div>
+       <Container>
       <h3 className="mb-4 span28">Create Product</h3>
       <Form noValidate validated={validated} onSubmit={submit}>
         <Form.Group className="mb-4">
@@ -139,6 +140,7 @@ const ProductsPage = ({productid}) => {
           </div>
         </Form.Group>
       </Form>
+      </Container> 
       </div>
     )
 }

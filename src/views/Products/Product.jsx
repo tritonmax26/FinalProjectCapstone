@@ -64,7 +64,7 @@ async function updateProduct(e) {
 
   return (
     <div> 
-      <NavbarMain />
+
       <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
@@ -111,7 +111,6 @@ async function updateProduct(e) {
 
         )
       }
-    <CopyRights />
     </div>
   )
 }

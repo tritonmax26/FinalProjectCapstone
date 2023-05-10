@@ -11,13 +11,12 @@ function App() {
    <div className="bgfull">
    <>
         
-        <Container>
             <Routes>
             {routes.map((route, index) => {
               return <Route key={index} path={route.path} element={route.element} exact />
             })}
             </Routes>
-        </Container>
+
     </>
     </div>
   )
