@@ -70,7 +70,7 @@ async function updateProduct(e) {
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
       <Card.Img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
         <Card.Body clas>
-          <Card.Title>Branch: {product.branch}</Card.Title>
+          <Card.Title>Branch: 1223{product.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             Name: {product.name}                   
           </Card.Subtitle>

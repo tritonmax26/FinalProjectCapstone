@@ -79,7 +79,7 @@ async function updateShop(e) {
       <span className='container d-flex align-items-center justify-content-center span26'>Individual Shop Query</span>
       <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
-        <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
+        <Card.Img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
         <Card.Body>
           <Card.Title>Branch: {shop.branch}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

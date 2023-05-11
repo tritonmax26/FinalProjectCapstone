@@ -31,11 +31,11 @@ async function getShops(){
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
        return(
-        <div>
+        <div key={index}>
             <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
-            <div>
-              <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }} >
-              <img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
+            <div >
+              <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}  >
+              <Card.Img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
               <Card.Body>
               <Card.Title>Branch: {shop.branch}</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">
@@ -50,7 +50,7 @@ async function getShops(){
                 </button> */}
                 <Link className='unlink btn btn-warning' to={`/products/${id}`}>Check Item </Link>          
                 </Card.Body>
-                </Card>                    
+              </Card>                    
             </div>  
           </div>
           )

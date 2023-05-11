@@ -14,7 +14,7 @@ const Loginpage = () => {
   return (
     <div >  
     
-    <div className=' spancontainer container d-flex align-items-center justify-content-center' >
+    <div className='spancontainer container d-flex align-items-center justify-content-center' >
     <div><p className=' text-center span28'>Inventory Portal</p>
     <Card style={{ width: '18rem' }}>  
       <Card.Body>

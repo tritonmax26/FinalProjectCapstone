@@ -7,11 +7,12 @@ body {
   min-height: 100vh;
 }
 
-/* .centerAll{
+.centerAll{
   justify-content: center;
   align-items: center;
   place-items: center;
-} */
+  
+}
 
 .unlink{
   text-decoration: none;
@@ -50,10 +51,12 @@ text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
 }
 
+
 .span27{
   color: rgb(255, 255, 255);
   font-size: 1.4rem;
   font-weight: 600;
+  padding: 0px;
   /* text-align: center; */
   /* margin: 10px; */
   /* align-items: center;
@@ -74,6 +77,82 @@ text-decoration: none;
   /* width: 100%; */
   /* margin-left: 1px; */
   text-shadow: 2px 2px 2px #000000;
+}
+
+.loginoverlay{
+  border: solid 5px black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  background-color: rgb(240, 248, 255, 50%);
+  border-radius: 20px;
+}
+
+.registeroverlay{
+  border: solid 5px black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: rgb(240, 248, 255, 50%);
+  border-radius: 20px;
+}
+
+.productoverlay{
+  border: solid 5px black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: rgb(240, 248, 255, 50%);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.createshopoverlay{
+  border: solid 5px black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: rgb(240, 248, 255, 50%);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.productspageoverlay{
+  border: solid 5px black;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  background-color: rgb(240, 248, 255, 50%);
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.centertext{
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.createshopcontainer{
+ margin: 50px;
+}
+
+.zoomeffect {
+  margin: .5rem;
+  box-shadow: rgb(199, 187, 187) 10px 10px 20px;
+}
+
+.zoomeffect:hover{
+  transform: scale(1.1);
+  transition: .5s;
 }
 
 .pad50{

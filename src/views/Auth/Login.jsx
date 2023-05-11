@@ -32,8 +32,8 @@ const Login = () => {
 
 
   return (
-    <div className='spancontainer container d-flex align-items-center justify-content-center'>
-        <form onSubmit={login}>
+    <div className='  spancontainer container d-flex align-items-center justify-content-center'>
+        <form onSubmit={login} className='loginoverlay'>
             <h2 className='mt-4 text-center span28'>Log In Portal</h2>
             <h5 className='mt-4 span27'>Email</h5>
             <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 

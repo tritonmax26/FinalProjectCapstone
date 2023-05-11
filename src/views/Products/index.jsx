@@ -38,14 +38,15 @@ const index = () => {
 
   return (
     <div>
-    <div>
-        <Container>
-          <Form onSubmit={search}>
-          <Form.Group className="mb-3 span27" controlId="formBasicEmail">
-            <Form.Label></Form.Label>
+    <div className='centertext'> 
+    <h3 className='span28'>Our Products Page</h3>         
+        <Container className='productoverlay'>              
+          <Form onSubmit={search}>          
+          <Form.Group className="mb-3 span27" controlId="formBasicEmail">            
+            <Form.Label>Search a Product</Form.Label>
             <Form.Control type="text" placeholder="Enter product Name" value={searchProduct} onChange={(e)=> setSearchProduct (e.target.value)}/>
             <Form.Text>
-            <p className='span26'>Search for a Product. We'll never share your email with anyone else.</p>
+            <p className='span26'>Please wait for the page to load.</p>
             </Form.Text>
           </Form.Group>
 
@@ -55,7 +56,7 @@ const index = () => {
               label="Latest"
               name="order"
               type = "radio"
-              id="asc"
+              id="desc"
               value={order}
               onChange= {(e) => setOrder(e.target.id)}
             >
@@ -65,7 +66,7 @@ const index = () => {
               label="Oldest"
               name="order"
               type = "radio"
-              id="desc"
+              id="asc"
               value={order}
               onChange= {(e) => setOrder(e.target.id)}
             >
@@ -74,14 +75,11 @@ const index = () => {
           <Form.Group>
             <Button className='span26' variant="primary" type="submit ">Search</Button>
           </Form.Group>
-
-          </Form>     
-
-
+          </Form>
         </Container>
     </div>
 
-      <div className='centerAll container'>
+      <div className='centertext'>
       <h1 className='span28'>Products Available</h1>
       <Container > 
           {products.map((product,index) => {    

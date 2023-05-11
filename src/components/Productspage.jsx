@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button , Container} from "react-bootstrap";
 import http from '../lib/http'
 import { useNavigate } from "react-router-dom";
 
@@ -72,74 +72,74 @@ const ProductsPage = ({productid}) => {
   onEdit &&
     (
       <div>
-       <Container>
-      <h3 className="mb-4 span28">Create Product</h3>
-      <Form noValidate validated={validated} onSubmit={submit}>
-        <Form.Group className="mb-4">
-          <Form.Label className="span26">Name</Form.Label>
-          <Form.Control
-            required
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please enter a Name
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group className="mb-4">
-          <Form.Label className="span26">Branch</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Branch"
-            value={branch}
-            onChange={(e) => setBranch(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-        <Form.Group className="mb-4">
-          <Form.Label className="span26">Description</Form.Label>
-          <Form.Control
-            required
-            as="textarea"
-            placeholder="Description"
-            value={description}
-            rows={1}
-            onChange={(e) => setDescription(e.target.value)}
-          ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please enter a description
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group className="mb-4">
-          <Form.Label className="span26">Price</Form.Label>
-          <Form.Control
-            required
-            as="textarea"
-            placeholder="Price"
-            value={price}
-            rows={1}
-            onChange={(e) => setPrice(e.target.value)}
-          ></Form.Control>
-          <Form.Control.Feedback type="invalid">
-            Please enter Price
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group className="mb-4">
-          <Form.Label className="span26">Image</Form.Label>
-          <Form.Control
-            type="file"
-            onChange={(e) => setImage(e.target.files[0])}
-          />
-        </Form.Group>
-        <Form.Group>
-          <div className="d-flex justify-content-end">
-            <Button variant="primary" className="span26" type="submit">
-              Create Product
-            </Button>
-          </div>
-        </Form.Group>
-      </Form>
+       <Container className='productspageoverlay'>
+          <h3 className="mb-4 span28">Create Product</h3>
+          <Form noValidate validated={validated} onSubmit={submit}>
+            <Form.Group className="mb-4">
+              <Form.Label className="span26">Name</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              ></Form.Control>
+              <Form.Control.Feedback type="invalid">
+                Please enter a Name
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label className="span26">Branch</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Branch"
+                value={branch}
+                onChange={(e) => setBranch(e.target.value)}
+              ></Form.Control>
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label className="span26">Description</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
+                placeholder="Description"
+                value={description}
+                rows={1}
+                onChange={(e) => setDescription(e.target.value)}
+              ></Form.Control>
+              <Form.Control.Feedback type="invalid">
+                Please enter a description
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label className="span26">Price</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
+                placeholder="Price"
+                value={price}
+                rows={1}
+                onChange={(e) => setPrice(e.target.value)}
+              ></Form.Control>
+              <Form.Control.Feedback type="invalid">
+                Please enter Price
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-4">
+              <Form.Label className="span26">Image</Form.Label>
+              <Form.Control
+                type="file"
+                onChange={(e) => setImage(e.target.files[0])}
+              />
+            </Form.Group>
+            <Form.Group>
+              <div className="d-flex justify-content-end">
+                <Button variant="primary" className="span26" type="submit">
+                  Create Product
+                </Button>
+              </div>
+            </Form.Group>
+          </Form>
       </Container> 
       </div>
     )

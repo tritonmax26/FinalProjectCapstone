@@ -38,25 +38,26 @@ return
 
   return (
     <div>
-      <div>
-          <Container>
+      <div className='centertext'>
+      <h3 className='span28'>Our Shops Page</h3>  
+          <Container className='productoverlay'>
           <Form onSubmit={search}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className=' span26'>Search for a shop.</Form.Label>
+            <Form.Label className=' span28'>Search for a shop.</Form.Label>
             <Form.Control type="text" placeholder="Enter Shop Name" value={searchShop} onChange={(e)=> setSearchShop (e.target.value)}/>
             <Form.Text className="text-muted">
-            <span className='btn btn-warning fontwhite'> Please wait for the page to load</span>
+            <span className='span26'> Please wait for the page to load</span>
             </Form.Text>
           </Form.Group>
 
           <Form.Group className="mb-3">
-            <Form.Check
+          <Form.Check
               inline
               className='span26'
-              label="Latest"
+              label="Newest"
               name="order"
               type = "radio"
-              id="asc"
+              id="desc"
               value={order}
               onChange= {(e) => setOrder(e.target.id)}
             >
@@ -67,7 +68,7 @@ return
               label="Oldest"
               name="order"
               type = "radio"
-              id="desc"
+              id="asc"
               value={order}
               onChange= {(e) => setOrder(e.target.id)}
             >
@@ -81,7 +82,7 @@ return
           </Container>
       </div>
 
-      <div className='centerAll container'>
+      <div className='centertext'>
       <h1 className='span28'>Shops Available</h1>  
         <Container >
           {shops.map((shop,index) => {      
@@ -92,13 +93,14 @@ return
                     </div>
                   )
                 })}
-        </Container>        
-        <Container >  
-          {
-            meta.links && <ShopsPagination  links={meta.links} active={meta.current_page} getShops={getShops}/>
-          }
-      </Container>
-
+        </Container> 
+        <div className='centerAll'>       
+            <Container >  
+              {
+                meta.links && <ShopsPagination  links={meta.links} active={meta.current_page} getShops={getShops}/>
+              }
+          </Container>
+        </div>
       </div>
     </div>
   )
