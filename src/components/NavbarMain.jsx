@@ -7,7 +7,7 @@ const NavbarMain = () => {
     <div>
       <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand className='span28' as={Link} to="/">S.A.P. Stocks & Holdings Inventory Data</Navbar.Brand>
+        <Navbar.Brand className='span28' as={Link} to="/">S.S.P. Stocks & Holdings Inventory Data</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

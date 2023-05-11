@@ -7,7 +7,7 @@ const CopyRights = () => {
     <div>
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand className='span28'>&copy; S.A.P. Stocks & Holdings Inventory Data, All rights reserved</Navbar.Brand>
+        <Navbar.Brand className='span28'>&copy; S.S.P. Stocks & Holdings Inventory Data, All rights reserved</Navbar.Brand>
       </Container>
     </Navbar>
 
