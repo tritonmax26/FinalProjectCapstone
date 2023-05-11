@@ -9,8 +9,13 @@ const  Mainpage = () => {
 
   return (
     <div>
-        {/* <NavbarMain/> */}
-        <Shops/>
+        dito sir simon lagyan mo lang ng introduction sa page natin anes ane lang hehehe
+        tapos uncomment lng sa navbar para ma open ulit heheh
+        like
+        -hero section
+        -about
+        -use ng page
+
     </div>
   )
 }
