@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import React from 'react';
 import { Container, Card} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-
+import Cargo from '../imgdata/cargoplane.mp4';
 
 
 
@@ -12,10 +12,10 @@ const Loginpage = () => {
 
 
   return (
-    <div >  
-    
-    <div className='spancontainer container d-flex align-items-center justify-content-center' >
-    <div><p className=' text-center span28'>Inventory Portal</p>
+    <div className='container d-flex  justify-content-center' >
+    <div> <video className='video1' src={Cargo} autoPlay loop />
+    <div className='spancontainer container d-flex  justify-content-center' >
+    <div><p className=' text-center span28'>Inventory Portal</p> 
     <Card style={{ width: '18rem' }}>  
       <Card.Body>
         <Card.Title>Welcome to S.A.P. Stocks & Holdings Inc.</Card.Title>
@@ -28,9 +28,15 @@ const Loginpage = () => {
         <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/register" className='fontwhite span26'> Signup</Link></Button> </div> 
       </Card.Body>
     </Card>
+    
     </div>
+    
     </div>
+    
     </div>
+
+    </div>
+    
   )
 }
 

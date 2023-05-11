@@ -3,11 +3,12 @@ import Loginpage from '../components/Loginpage'
 
 const Home = () => {
   return (
-    <div> 
+    <div >
         {/* <NavbarMain />                      */}
 
         <Loginpage />        
     </div>
+    
   )
 }
 
