@@ -13,7 +13,7 @@ const NavbarMain = () => {
           <Nav className="me-auto">
           </Nav>
           <Nav className="mr-auto">
-            <Nav.Link className='span26' as={Link} to="/mainpage">Home</Nav.Link>
+            {/* <Nav.Link className='span26' as={Link} to="/mainpage">Home</Nav.Link> */}
             <Nav.Link className='span26' as={Link} to="/shoppage" >Create Shops</Nav.Link>     
             <NavDropdown title="Search" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="/shops">Shops</NavDropdown.Item>              
