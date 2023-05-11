@@ -19,7 +19,7 @@ const Loginpage = () => {
     <div><p className=' text-center span28'>Inventory Portal</p> 
     <Card style={{ width: '18rem' }}>  
       <Card.Body>
-        <Card.Title>Welcome to S.A.P. Stocks & Holdings Inc.</Card.Title>
+        <Card.Title>Welcome to S.S.P. Stocks & Holdings Inc.</Card.Title>
         <Card.Subtitle className="mb-4 text-muted">Few updates has been made, new patches has been implemented. </Card.Subtitle>
         <Card.Subtitle className="mb-2 fontblack">Existing or New User?</Card.Subtitle>
         <Card.Text>
@@ -32,7 +32,7 @@ const Loginpage = () => {
     </div>
 
     </div>
-    
+
     </div>
     
     </div>
