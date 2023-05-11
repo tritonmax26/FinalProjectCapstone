@@ -8,7 +8,7 @@ import NavbarMain from '../../components/NavbarMain'
 const  Mainpage = () => {
 
   return (
-    <div>
+    <div className='span27'>
         dito sir simon lagyan mo lang ng introduction sa page natin anes ane lang hehehe
         tapos uncomment lng sa navbar para ma open ulit heheh
         like
