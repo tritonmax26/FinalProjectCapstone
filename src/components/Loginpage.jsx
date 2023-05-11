@@ -12,8 +12,9 @@ const Loginpage = () => {
 
 
   return (
+    <div>
     <div className='container d-flex  justify-content-center' >
-    <div> <video className='video1' src={Cargo} autoPlay loop />
+    <div > <video className='video1' src={Cargo} autoPlay loop />
     <div className='spancontainer container d-flex  justify-content-center' >
     <div><p className=' text-center span28'>Inventory Portal</p> 
     <Card style={{ width: '18rem' }}>  
@@ -28,7 +29,8 @@ const Loginpage = () => {
         <div className="block border-2 mb-2 px-2"><Button variant="primary" className='buttonhover'><Link to="/register" className='fontwhite span26'> Signup</Link></Button> </div> 
       </Card.Body>
     </Card>
-    
+    </div>
+
     </div>
     
     </div>
