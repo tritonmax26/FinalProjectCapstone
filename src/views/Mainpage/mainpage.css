@@ -1,0 +1,50 @@
+.carousel-item-container{
+    height: 500px;
+}
+
+.carousel-caption {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right !important;
+    padding: 0 50px;
+    border-radius: 5px;
+    color: #333;
+}
+
+.carousel-caption p {
+    max-width: 400px;
+    margin-left: auto;
+}
+
+.carousel-caption button {
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+  
+.carousel-caption button:hover {
+    background-color: #ffcf40;
+    color: #333;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    margin: 100px;
+}
+
+.cardcolor{
+    background-color: #333;
+}
+
+.circle-image{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+  

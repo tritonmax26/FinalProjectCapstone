@@ -127,7 +127,7 @@ const ShopsPage = () => {
           </Form.Group>
           <Form.Group>
             <div className="d-flex justify-content-end">
-              <Button variant="primary" type="submit" className="span26">
+              <Button variant="dark" type="submit" className="span26">
                 Create Shop
               </Button>
             </div>

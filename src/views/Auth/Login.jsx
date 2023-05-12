@@ -39,7 +39,7 @@ const Login = () => {
             <input type="email" className='mb-4' value={email} onChange={(e)=> setEmail(e.target.value)}placeholder='email'/> 
             <h5 className='span27'>Password</h5>
             <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
-            <br></br><input type="submit" class="btn btn-primary buttonhover span27" value="Sign In!" />
+            <br></br><input type="submit" class="btn btn-dark buttonhover span27" value="Sign In!" />
         </form> 
 
 

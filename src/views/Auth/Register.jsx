@@ -52,7 +52,7 @@ const Register = () => {
             <input type="password" className='mb-4' value={password} onChange={(e)=> setPassword(e.target.value)}placeholder='password'/>
             <h6 className='span27'>Confirm Password</h6> 
             <input type="password" className='mb-4' value={passwordConfrimation} onChange={(e)=> setPassworConfirmation(e.target.value)}placeholder='confirm password'/>
-            <br></br><input type="submit" class="btn btn-primary buttonhover span26" value="Register!" />
+            <br></br><input type="submit" class="btn btn-dark buttonhover span26" value="Register!" />
         </form> 
     </div>
   )

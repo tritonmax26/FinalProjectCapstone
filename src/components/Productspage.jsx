@@ -134,7 +134,7 @@ const ProductsPage = ({productid}) => {
             </Form.Group>
             <Form.Group>
               <div className="d-flex justify-content-end">
-                <Button variant="primary" className="span26" type="submit">
+                <Button variant="dark" className="span26" type="submit">
                   Create Product
                 </Button>
               </div>

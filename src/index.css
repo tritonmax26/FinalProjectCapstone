@@ -7,27 +7,27 @@ body {
   min-height: 100vh;
 }
 
-.centerAll{
+.centerAll {
   justify-content: center;
   align-items: center;
   place-items: center;
-  
+
 }
 
-.unlink{
+.unlink {
   text-decoration: none;
 }
 
-.fontwhite{
+.fontwhite {
   text-decoration: none;
   color: #ffffff;
 }
 
-.buttonhover{
-text-decoration: none;
+.buttonhover {
+  text-decoration: none;
 }
 
-.span28{
+.span28 {
   color: rgb(255, 255, 255);
   font-size: 2rem;
   font-weight: 600;
@@ -40,7 +40,7 @@ text-decoration: none;
   text-shadow: 2px 2px 4px #000000;
 }
 
-.tcolor{
+.tcolor {
   color: rgb(255, 255, 255);
   /* text-align: center; */
   /* margin: 10px; */
@@ -52,7 +52,7 @@ text-decoration: none;
 }
 
 
-.span27{
+.span27 {
   color: rgb(255, 255, 255);
   font-size: 1.4rem;
   font-weight: 600;
@@ -66,7 +66,7 @@ text-decoration: none;
   text-shadow: 2px 2px 2px #000000;
 }
 
-.span26{
+.span26 {
   color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: 600;
@@ -79,7 +79,7 @@ text-decoration: none;
   text-shadow: 2px 2px 2px #000000;
 }
 
-.loginoverlay{
+.loginoverlay {
   border: solid 5px black;
   padding-left: 30px;
   padding-right: 30px;
@@ -89,7 +89,7 @@ text-decoration: none;
   border-radius: 20px;
 }
 
-.registeroverlay{
+.registeroverlay {
   border: solid 5px black;
   padding-left: 30px;
   padding-right: 30px;
@@ -99,7 +99,7 @@ text-decoration: none;
   border-radius: 20px;
 }
 
-.productoverlay{
+.productoverlay {
   border: solid 5px black;
   padding-left: 30px;
   padding-right: 30px;
@@ -110,7 +110,7 @@ text-decoration: none;
   text-align: center;
 }
 
-.createshopoverlay{
+.createshopoverlay {
   border: solid 5px black;
   padding-left: 30px;
   padding-right: 30px;
@@ -122,7 +122,7 @@ text-decoration: none;
   align-items: center;
 }
 
-.productspageoverlay{
+.productspageoverlay {
   border: solid 5px black;
   padding-left: 30px;
   padding-right: 30px;
@@ -135,14 +135,14 @@ text-decoration: none;
   margin-top: 20px;
 }
 
-.centertext{
+.centertext {
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.createshopcontainer{
- margin: 50px;
+.createshopcontainer {
+  margin: 50px;
 }
 
 .zoomeffect {
@@ -150,16 +150,16 @@ text-decoration: none;
   box-shadow: rgb(199, 187, 187) 10px 10px 20px;
 }
 
-.zoomeffect:hover{
+.zoomeffect:hover {
   transform: scale(1.1);
   transition: .5s;
 }
 
-.pad50{
+.pad50 {
   padding-top: 100px;
 }
 
-.spancontainer{
+.spancontainer {
   /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
   background-position: center;
   background-size: cover;
@@ -169,8 +169,8 @@ text-decoration: none;
   opacity: 100%;
 }
 
-.bglogin{
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)),  url(/src/imgdata/warehouse.jpg);
+.bglogin {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607), rgba(0, 0, 0, 0.607)), url(/src/imgdata/warehouse.jpg);
   /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
   background-position: center;
   background-size: cover;
@@ -179,52 +179,60 @@ text-decoration: none;
   height: 100vh;
 }
 
-.bgfull{
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)),  url(/src/imgdata/warehouse.jpg);
+.bgfull {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.607), rgba(0, 0, 0, 0.607)), url(/src/imgdata/warehouse.jpg);
   /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
   background-position: center;
   background-size: cover;
   object-fit: contain;
 }
 
-.buttonhover:hover{
-  background-image: linear-gradient(to right, #F97B22, #FEE8B0); 
-  padding: 0.5rem;
+.buttonhover button {
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  transition: background-image 0.3s ease;
 }
 
-.fontblack{
+
+.buttonhover:hover {
+  background-image: linear-gradient(to right, gold, #ffcf40);
+}
+
+.fontblack {
   color: black;
 }
 
-.bgyellow{
-background-color: #ffd900;
+.bgyellow {
+  background-color: #ffd900;
 }
 
 
-.productDivContainer{
+.productDivContainer {
   display: inline-flex;
   /* height: 15rem;
   width: 20rem;   */
 }
 
-.shopDivContainer{
+.shopDivContainer {
   display: inline-flex;
   /* height: 15rem;
   width: 20rem;  */
 }
 
-.productCard{
-  display: block; 
+.productCard {
+  display: block;
 }
 
-.mr-2{
+.mr-2 {
   margin-right: 8px;
 }
 
-.ml-2{
+.ml-2 {
   margin-left: 8px;
 }
 
-.video1{
-opacity: 0%;
+.video1 {
+  opacity: 0%;
 }
