@@ -26,14 +26,15 @@ async function getShops(){
 }, [])
 
   return (
-    <div className='container '>
+    <div className='container centertext'>
       <span className='span26'>Per products per shop query </span>
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
        return(
-        <div key={index}>
-            <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1>
-            <div >
+        <div key={index} className='shopDivContainer p-3'>
+            
+            <div>
+            {/* <h1 className='container d-flex align-items-center justify-content-center span28'>{shop.name}</h1> */}
               <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}  >
               <Card.Img src={`${import.meta.env.VITE_API}/image/${shop.image}`} alt="" />
               <Card.Body>
