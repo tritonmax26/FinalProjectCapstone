@@ -27,7 +27,7 @@ const Mainpage = () => {
     <>
     {shops.map((shop,index)=>{
       return(
-        <div>
+    <div key={index}>
       <Carousel className='carousel-body'>
         <Carousel.Item>
           <div className="carousel-item-container">
@@ -121,9 +121,7 @@ const Mainpage = () => {
         </Card>
       </div>
 
-
-
-        </div>   
+    </div>   
       )
     })}
 
