@@ -8,8 +8,26 @@ import NavbarMain from '../../components/NavbarMain';
 import './mainpage.css';
 
 const Mainpage = () => {
+  const [shops, setShops] = useState([]) 
+
+
+  async function getShops(){
+    const res = await http.get('/shops')      
+    setShops(res.data.data)
+   console.log(res.data.data)
+  
+  }
+
+  useEffect (()=>{        
+    getShops();
+    return
+    }, [])
+
   return (
     <>
+    {shops.map((shop,index)=>{
+      return(
+        <div>
       <Carousel className='carousel-body'>
         <Carousel.Item>
           <div className="carousel-item-container">
@@ -68,6 +86,8 @@ const Mainpage = () => {
         </Carousel.Item>
       </Carousel>
 
+      <h1 className="text-center mt-3 text-light texth1">Welcome! {shop.user.name}</h1>
+
       <h1 className="text-center mt-3 text-light texth1">Acknowledgements</h1>
       <p className="text-center text-light">We extend our sincere gratitude to the following individuals who have contributed to the success of this website:</p>
       
@@ -100,6 +120,13 @@ const Mainpage = () => {
           </Card.Body>
         </Card>
       </div>
+
+
+
+        </div>   
+      )
+    })}
+
     </>
   );
 };
