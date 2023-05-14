@@ -28,9 +28,7 @@ const Mainpage = () => {
       {shops.map((shop, index) => {
         return (
           <div key={index}>
-
             <h1 className="text-light welcome-h1" >Welcome! {shop.user.name}</h1>
-
             <div style={{ margin: '35px', borderRadius: '50px', overflow: 'hidden' }}>
               <Carousel className='carousel-body' style={{ margin: '75px', borderRadius: '50px' }}>
                 <Carousel.Item>
@@ -41,14 +39,12 @@ const Mainpage = () => {
                       alt="Image 1"
                     />
                     <div className="carousel-caption">
-                      <h3>Discover a world of endless possibilities</h3>
+                      <h3>Create Your Own Shop</h3>
                       <p>
-                        Browse, search, and find exactly what you're looking for with
-                        ease, whether it's rare collectibles, everyday essentials, or
-                        specialized equipment.
+                        Unlock the potential of your business by creating your own shop. Showcase your products and reach a wider audience. With our user-friendly tools, setting up your shop is quick and easy.
                       </p>
-                      <Link to="/shoppage">
-                        <Button variant="dark">Create</Button>
+                      <Link to="/create-shops">
+                        <Button variant="dark">Create Shops</Button>
                       </Link>
                     </div>
                   </div>
@@ -61,11 +57,9 @@ const Mainpage = () => {
                       alt="Image 2"
                     />
                     <div className="carousel-caption">
-                      <h3>Streamline your inventory management effortlessly</h3>
+                      <h3>Manage Your Shops</h3>
                       <p>
-                        From tracking stock levels to monitoring sales trends, our
-                        platform provides you with the tools to optimize your business
-                        operations and stay one step ahead.
+                        Take control of your inventory with our comprehensive shop management system. Keep track of stock levels, manage orders, and analyze sales trends to optimize your business operations and maximize your profits.
                       </p>
                       <Link to="/shops">
                         <Button variant="dark">Shops</Button>
@@ -81,12 +75,9 @@ const Mainpage = () => {
                       alt="Image"
                     />
                     <div className="carousel-caption">
-                      <h3>Unlock the power of efficient inventory control</h3>
+                      <h3>Discover Products</h3>
                       <p>
-                        Say goodbye to manual counting and spreadsheet chaos. Our
-                        streamlined interface and automated features simplify inventory
-                        tasks, helping you save time, reduce errors, and increase
-                        productivity.
+                        Explore a wide range of products from various shops on our platform. Find unique items, everyday essentials, and specialized goods. Start your shopping journey today and find exactly what you're looking for.
                       </p>
                       <Link to="/products">
                         <Button variant="dark">Products</Button>
