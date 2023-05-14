@@ -8,7 +8,7 @@ import { Container} from 'react-bootstrap';
 function App() {
  
   return (
-   <div className="bgfull">
+   <div className="bgfull ">
    <>
         
             <Routes>

@@ -63,10 +63,10 @@ async function updateProduct(e) {
 }, [])
 
   return (
-    <div className='spancontainer'> 
+    <div className='spancontainer '> 
 
-      <span className='container d-flex align-items-center justify-content-center span26'>Products Link</span>
-      <h1 className='container d-flex align-items-center justify-content-center span28'>{product.name}</h1>
+      <span className='container d-flex align-items-center justify-content-center span26 '>Products Link</span>
+      <h1 className='container  d-flex align-items-center justify-content-center span28 '>{product.name}</h1>
       <Card className='container d-flex align-items-center justify-content-center' style={{ width: '18rem' }}>
       <Card.Img src={`${import.meta.env.VITE_API}/image/${product.image}`} alt="" />
         <Card.Body clas>
