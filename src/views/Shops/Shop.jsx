@@ -97,7 +97,7 @@ const Shop = () => {
       </Card>
 
       <div className='container d-flex align-items-center justify-content-center'>
-        <Link className='unlink px-2 mr-2 btn btn-primary span26' to="/mainpage">Back</Link>
+        <Link className='unlink px-2 mr-2 btn btn-primary span26' to="/shops">Back</Link>
         <button className='mr-2 btn btn-success span26' onClick={() => setOnEdit(!onEdit)}>
           Edit Content
         </button>
