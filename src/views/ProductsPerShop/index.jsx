@@ -26,7 +26,7 @@ async function getShops(){
 }, [])
 
   return (
-    <div className='container centertext'>
+    <div className='spancontainer container centertext'>
       <span className='span26'>Per products per shop query </span>
       <ProductsPage productid ={id} />
       {shops.map((shop,index) => {      
