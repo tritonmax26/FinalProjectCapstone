@@ -48,7 +48,7 @@ async function getShops(){
                 {/* <button onClick={Productspage}>
                   Check Product
                 </button> */}
-                <Link className='unlink btn btn-warning' to={`/products/${id}`}>Check Item </Link>          
+                <Link className='unlink btn btn-warning' to={`/products/${shop.id}`}>Check Item </Link>          
                 </Card.Body>
               </Card>                    
             </div>  
