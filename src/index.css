@@ -236,3 +236,51 @@ body {
 .video1 {
   opacity: 0%;
 }
+
+.paulimg {
+  background-image: url(/src/imgdata/PaulMiranda.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.simonimg {
+  background-image: url(/src/imgdata/SimonFornillos2.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.stanleyimg {
+  background-image: url(/src/imgdata/stanley.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.inventoryimg {
+  background-image: url(/src/imgdata/inventory.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.stocksimg {
+  background-image: url(/src/imgdata/stocks.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
+
+.holdingsimg {
+  background-image: url(/src/imgdata/holdings.jpg);
+  /* linear-gradient(to right, rgba(0, 0, 0, 0.607),rgba(0, 0, 0, 0.607)), */
+  background-position: center;
+  background-size: cover;
+  object-fit: contain;
+}
