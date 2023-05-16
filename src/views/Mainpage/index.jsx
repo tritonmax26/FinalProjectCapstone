@@ -6,6 +6,12 @@ import http from '../../lib/http';
 import Shops from '../Shops';
 import NavbarMain from '../../components/NavbarMain';
 import './mainpage.css';
+import Paul from '../../imgdata/PaulMiranda.jpg'
+import Simon from '../../imgdata/SimonFornillos2.jpg'
+import Stanley from '../../imgdata/stanley.jpg'
+import Stocks from '../../imgdata/stocks.jpg'
+import Inventory from '../../imgdata/inventory.jpg'
+import Holdings from '../../imgdata/holdings.jpg'
 
 const Mainpage = () => {
   const { id } = useParams();
@@ -38,12 +44,8 @@ const Mainpage = () => {
       <div style={{ margin: '35px', borderRadius: '50px', overflow: 'hidden' }}>
         <Carousel className='carousel-body' style={{ margin: '75px', borderRadius: '50px' }}>
           <Carousel.Item>
-            <div className="carousel-item-container">
-              <img
-                className="d-block w-100"
-                src="src/imgdata/stocks.jpg"
-                alt="Image 1"
-              />
+            <div className="carousel-item-container stocksimg">
+
               <div className="carousel-caption">
                 <h3>Create and manage your own inventory</h3>
                 <p>
@@ -56,12 +58,7 @@ const Mainpage = () => {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div className="carousel-item-container">
-              <img
-                className="d-block w-100"
-                src="src/imgdata/inventory.jpg"
-                alt="Image 2"
-              />
+            <div className="carousel-item-container inventoryimg">
               <div className="carousel-caption">
                 <h3>Explore a wide range of shops and products</h3>
                 <p>
@@ -74,12 +71,7 @@ const Mainpage = () => {
             </div>
           </Carousel.Item>
           <Carousel.Item>
-            <div className="carousel-item-container">
-              <img
-                className="d-block w-100"
-                src="src/imgdata/holdings.jpg"
-                alt="Image"
-              />
+            <div className="carousel-item-container holdingsimg">
               <div className="carousel-caption">
                 <h3>Efficiently manage and track your inventory</h3>
                 <p>
@@ -100,7 +92,7 @@ const Mainpage = () => {
 
       <div className='card-container'>
         <Card className='text-center text-light card-color' style={{ width: '18rem', margin: '20px' }}>
-          <Card.Img variant="top" src="src/imgdata/stanley.jpg" className="img-fluid rounded-circle p-3 circle-image" style={{ width: '300px', height: '300px' }} />
+          <Card.Img variant="top" className="img-fluid rounded-circle p-3 circle-image stanleyimg" style={{ width: '300px', height: '300px' }} />
           <Card.Body>
             <Card.Title >Stanley Balmores</Card.Title>
             <Card.Text>
@@ -109,7 +101,7 @@ const Mainpage = () => {
           </Card.Body>
         </Card>
         <Card className='text-center bg- text-light card-color' style={{ width: '18rem', margin: '20px' }}>
-          <Card.Img variant="top" src="src/imgdata/SimonFornillos2.jpg" className="img-fluid rounded-circle p-3 circle-image" style={{ width: '300px', height: '300px' }} />
+          <Card.Img variant="top" className="img-fluid rounded-circle p-3 circle-image simonimg" style={{ width: '300px', height: '300px' }} />
           <Card.Body>
             <Card.Title >Simon Fornillos</Card.Title>
             <Card.Text>
@@ -118,7 +110,7 @@ const Mainpage = () => {
           </Card.Body>
         </Card>
         <Card className='text-center bg- text-light card-color' style={{ width: '18rem', margin: '20px' }}>
-          <Card.Img variant="top" src="src/imgdata/PaulMiranda.jpg" className="img-fluid rounded-circle p-3 " style={{ width: '300px', height: '300px' }} />
+          <Card.Img variant="top" className="img-fluid rounded-circle p-3 paulimg" style={{ width: '300px', height: '300px' }} />
           <Card.Body>
             <Card.Title >Paul Miranda</Card.Title>
             <Card.Text>
